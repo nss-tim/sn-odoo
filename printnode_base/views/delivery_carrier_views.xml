@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_delivery_carrier_form" model="ir.ui.view">
+            <field name="name">delivery.carrier.form</field>
+            <field name="model">delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.view_delivery_carrier_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page name="printnode" string="Direct Print">
+                        <group colspan="2">
+                            <field name="autoprint_paperformat_id"/>
+                            <p class="o_wrap_label"/><!-- Do not remove - important for layout! -->
+                            <p class="mb-2">
+                                <small>
+                                    This settings defines which paper format should be chosen for printing labels of this carrier.
+                                </small>
+                            </p>
+                        </group>
+
+                        <group colspan="2">
+                            <field name="exclude_invoice_printing"/>
+                            <p class="o_wrap_label"/><!-- Do not remove - important for layout! -->
+                            <p class="mb-2">
+                                <small>
+                                    Some carriers, when generating shipping labels, may also generate additional documents such as
+                                    commercial invoices. If you enable automatic printing of shipping labels and want to ignore
+                                    these additional documents, please activate this option and specify keywords in the field above.
+                                    The module will use these keywords to detect such documents and exclude them from printing.
+                                </small>
+                            </p>
+                            <field name="exclusion_marker" invisible="exclude_invoice_printing==False" required="exclude_invoice_printing==True"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_delivery_carrier_printnode_list" model="ir.ui.view">
+            <field name="name">delivery.carrier.printnode.list</field>
+            <field name="model">delivery.carrier</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <list string="Delivery Carrier" editable="bottom" create="false" delete="false">
+                    <field name="name" readonly="1" />
+                    <field name="autoprint_paperformat_id" />
+                    <field name="printer_id" options="{'no_create': True}" />
+                    <field name="printer_bin" options="{'no_create': True}" />
+                </list>
+            </field>
+        </record>
+
+        <record id="printnode_carrier_settings" model="ir.actions.act_window">
+            <field name="name">Quick Delivery Carrier Direct Print Settings</field>
+            <field name="res_model">delivery.carrier</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="printnode_base.view_delivery_carrier_printnode_list" />
+        </record>
+
+        <menuitem id="menu_printnode_carrier_settings"
+                  name="Delivery Carrier Settings"
+                  parent="menu_printnode_service"
+                  sequence="35"
+                  action="printnode_carrier_settings"
+        />
+
+    </data>
+</odoo>

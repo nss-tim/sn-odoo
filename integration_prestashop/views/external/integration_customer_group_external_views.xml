@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- List view -->
+        <record id="integration_customer_group_external_view_list" model="ir.ui.view">
+            <field name="name">integration.customer.group.external.view.list</field>
+            <field name="model">integration.customer.group.external</field>
+            <field name="arch" type="xml">
+                <list editable="bottom" create="0">
+                    <field name="id" groups="base.group_no_one"/>
+                    <field name="integration_id"/>
+                    <field name="external_id"/>
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record id="integration_customer_group_external_view_search" model="ir.ui.view">
+            <field name="name">integration.customer.group.external.view.search</field>
+            <field name="model">integration.customer.group.external</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="external_id"/>
+                    <group>
+                    <filter string="E-Commerce Store" name="group_by_integration_id" context="{'group_by': 'integration_id'}"/>
+                </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="integration_customer_group_external_action" model="ir.actions.act_window">
+            <field name="name">External Customer Group</field>
+            <field name="path">eci-external-customer-groups</field>
+            <field name="res_model">integration.customer.group.external</field>
+            <field name="view_mode">list</field>
+            <field name="group_ids" eval="[(4, ref('base.group_no_one'))]"/>
+        </record>
+
+    </data>
+</odoo>

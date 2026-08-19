@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Product Template Fields -->
+        <record id="prestashop_ecommerce_field_name_name" model="product.ecommerce.field">
+            <field name="name">Product Name (name)</field>
+            <field name="technical_name">name</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__name"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__name'), ref('integration.field_product_template__website_product_name'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_name_website_product_name" model="product.ecommerce.field">
+            <field name="name">Product Name (website_product_name)</field>
+            <field name="technical_name">name</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__website_product_name"/>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__name'), ref('integration.field_product_template__website_product_name'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_description" model="product.ecommerce.field">
+            <field name="name">Product Description</field>
+            <field name="technical_name">description</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__website_description"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__website_description'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_short_description" model="product.ecommerce.field">
+            <field name="name">Product Short Description</field>
+            <field name="technical_name">description_short</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__website_short_description"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__website_short_description'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_meta_title" model="product.ecommerce.field">
+            <field name="name">Product SEO Meta Title</field>
+            <field name="technical_name">meta_title</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__website_seo_metatitle"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__website_seo_metatitle'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_meta_description" model="product.ecommerce.field">
+            <field name="name">Product SEO Meta Description</field>
+            <field name="technical_name">meta_description</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__website_seo_description"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__website_seo_description'),))]"/>
+            <field name="is_translatable_field" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_price" model="product.ecommerce.field">
+            <field name="name">Product Sales price</field>
+            <field name="technical_name">price</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__list_price"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__list_price'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+# Price shouldn't be imported if pricelist for export was set (excluding the first time import)
+
+if integration.integration_pricelist_id and not FIRST_TIME_IMPORT:
+    value = {}
+else:
+    value_ = field._extract_import_value(integration.id, external_data)
+    value_ = float(value_ or 0)
+
+    if integration.price_including_taxes:
+        template_data, _ = external_data
+        id_tax_rules_group = template_data.get('id_tax_rules_group')
+
+        if id_tax_rules_group and id_tax_rules_group != '0':
+            odoo_tax = integration._convert_external_tax(id_tax_rules_group)
+            if not odoo_tax:
+                raise UserError(
+                    'Cannot import product: tax "%s" is not mapped to an Odoo tax. '
+                    'Please map it in Mappings \u2192 Taxes or enable '
+                    '"Auto-Create Missing Taxes" on the integration.' % id_tax_rules_group
+                )
+            value_ = value_ * (1 + odoo_tax.amount / 100)
+
+    odoo_name = field.get_odoo_field_name()
+
+    value = {
+        odoo_name: value_,
+    }
+            </field>
+            <field name="export_script">
+if integration.integration_pricelist_id:
+    price = integration.integration_pricelist_id._get_product_price(template, 0)
+else:
+    price = float(
+        field._prepare_export_value(integration.id, template.id) or 0
+    )
+
+value_ = template.get_price_by_send_tax_incl(integration.id, price)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: str(value_),
+    'show_price': '1',
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_available_for_order" model="product.ecommerce.field">
+            <field name="name">Product Available For Order</field>
+            <field name="technical_name">available_for_order</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__sale_ok"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__sale_ok'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script">
+is_active = template.active and template.sale_ok
+value_ = '1' if is_active else '0'
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_active" model="product.ecommerce.field">
+            <field name="name">Product Is Active</field>
+            <field name="technical_name">active</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__active'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value_ = field._extract_import_value(integration.id, external_data, raw=True)
+
+value = {
+    'active': value_ == '1',
+}
+
+if FIRST_TIME_IMPORT:
+    value.update(
+        active=True,
+        is_storable=True,
+    )
+            </field>
+            <field name="export_script">
+if integration.send_inactive_product and not EXTERNAL_CODE:
+    value_ = '0'
+else:
+    is_active = template.active and template.sale_ok
+    value_ = '1' if is_active else '0'
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_default_category" model="product.ecommerce.field">
+            <field name="name">Product Default Category</field>
+            <field name="technical_name">id_category_default</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__integration_default_category_id"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__integration_default_category_id'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value_ = False
+
+# Check if inactive categories should be imported
+presta_category_id = field._extract_import_value(integration.id, external_data)
+
+if presta_category_id and (
+    integration.import_inactive_categories
+    or integration.adapter._check_active_categories([presta_category_id]
+)):
+    odoo_categories = integration.convert_external_categories([presta_category_id])
+    if odoo_categories:
+        value_ = odoo_categories[0]
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: value_,
+}
+            </field>
+            <field name="export_script">
+value_ = template.get_default_category(integration.id)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_other_categories" model="product.ecommerce.field">
+            <field name="name">Product Other Categories</field>
+            <field name="technical_name">categories</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__integration_category_ids"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__integration_category_ids'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+template_data, _ = external_data
+
+external_categories = template_data \
+    .get('associations', {}) \
+    .get('categories', {}) \
+    .get('category', [])
+
+if not external_categories:
+    value = {}
+else:
+    if not isinstance(external_categories, list):
+        external_categories = [external_categories]
+
+    if integration.import_inactive_categories:
+        ext_category_ids = [x['id'] for x in external_categories if x and x.get('id')]
+    else:
+        ext_category_ids = integration.adapter \
+            ._check_active_categories([x['id'] for x in external_categories])
+
+    # Exclude category with the root ID if present
+    ROOT_CMS_PAGE_CATEGORY_ID = '1'
+
+    filtered_ext_category_ids = [
+        x for x in ext_category_ids if x != ROOT_CMS_PAGE_CATEGORY_ID
+    ]
+
+    value_ = integration.convert_external_categories(filtered_ext_category_ids)
+
+    odoo_name = field.get_odoo_field_name()
+
+    value = {
+        odoo_name: [(6, 0, value_)],
+    }
+            </field>
+            <field name="export_script">
+categories_list = template.get_categories(integration.id)
+default_category = template.get_default_category(integration.id)
+
+if default_category:
+    categories_list.append(default_category)
+
+value_ = [x for x in set(categories_list) if str(x) != '0']
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_tax_group" model="product.ecommerce.field">
+            <field name="name">Product Tax Group</field>
+            <field name="technical_name">id_tax_rules_group</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="account.field_product_template__taxes_id"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('account.field_product_template__taxes_id'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+id_tax_rules_group = field._extract_import_value(integration.id, external_data)
+
+if id_tax_rules_group and id_tax_rules_group != '0':
+    odoo_tax = integration._convert_external_tax(id_tax_rules_group)
+    if not odoo_tax:
+        raise UserError(
+            'Cannot import product: tax "%s" is not mapped to an Odoo tax. '
+            'Please map it in Mappings \u2192 Taxes or enable '
+            '"Auto-Create Missing Taxes" on the integration.' % id_tax_rules_group
+        )
+    value_ = [(6, 0, odoo_tax.ids)]
+else:
+    value_ = [(5, 0, 0)]
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: value_,
+}
+            </field>
+            <field name="export_script">
+taxes = template.get_taxes(integration.id) or [{'tax_group_id': '0'}]
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: taxes[0]['tax_group_id'],
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_additional_delivery_time" model="product.ecommerce.field">
+            <field name="name">Delivery time</field>
+            <field name="technical_name">additional_delivery_times</field>
+            <field name="type_api">prestashop</field>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value = {}
+            </field>
+            <field name="export_script">
+delivery_time = integration.delivery_time
+
+if delivery_time == 'none':
+    value_ = '0'
+elif delivery_time == 'default':
+    value_ = '1'
+elif delivery_time == 'specific':
+    value_ = '2'
+else:
+    raise ValueError(f'Invalid delivery time: {delivery_time}')
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_delivery_in_stock" model="product.ecommerce.field">
+            <field name="name">Delivery time of in-stock products</field>
+            <field name="technical_name">delivery_in_stock</field>
+            <field name="type_api">prestashop</field>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value = {}
+            </field>
+            <field name="export_script">
+value_ = template.get_in_stock_delivery_message(integration.id)
+
+api_name = field.get_api_field_name()
+
+value =  {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_delivery_out_stock" model="product.ecommerce.field">
+            <field name="name">Delivery time of out-of-stock products with allowed orders</field>
+            <field name="technical_name">delivery_out_stock</field>
+            <field name="type_api">prestashop</field>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value = {}
+            </field>
+            <field name="export_script">
+value_ = template.get_out_of_stock_delivery_message(integration.id)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_product_features" model="product.ecommerce.field">
+            <field name="name">Product Features</field>
+            <field name="technical_name">product_features</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration_prestashop.field_product_template__feature_line_ids"/>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration_prestashop.field_product_template__feature_line_ids'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+ProductFeature = env['product.feature']
+ProductFeatureValue = env['product.feature.value']
+value_ = [(5, 0)]
+
+template_data, _ = external_data
+
+external_features = template_data \
+    .get('associations', {}) \
+    .get('product_features', {}) \
+    .get('product_feature', [])
+
+def make_list_if_not(value):
+    if not isinstance(value, list):
+        value = [value]
+    return value
+
+external_features = [{
+    'feature_id': x['id'],
+    'feature_value_id': x['id_feature_value']
+} for x in make_list_if_not(external_features)]
+
+
+for feature_line in external_features:
+    feature = ProductFeature
+    feature_value = ProductFeatureValue
+
+    if feature_line['feature_id'] != '0':
+        feature = ProductFeature.from_external(integration, feature_line['feature_id'])
+
+    if feature_line['feature_value_id'] != '0':
+        feature_value = ProductFeatureValue.from_external(integration, feature_line['feature_value_id'])
+
+    if feature and feature_value:
+        value_.append((0, 0, {
+            'feature_id': feature.id,
+            'feature_value_id': feature_value.id,
+        }))
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: value_,
+}
+            </field>
+            <field name="export_script">
+value_ = template.get_product_features(integration.id)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_product_tags" model="product.ecommerce.field">
+            <field name="name">Product Tags</field>
+            <field name="technical_name">tags</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration.field_product_template__external_tag_group_ids"/>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_template__external_tag_group_ids'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+raw_tags = external_data[0].get('associations', {}).get('tags', {}).get('tag', [])
+if not isinstance(raw_tags, list):
+    raw_tags = [raw_tags]
+
+ExternalLang = integration.env['integration.res.lang.external']
+lang_map = {l.code: l.id for l in ExternalLang.search([('integration_id', '=', integration.id)])}
+
+tags_by_lang_id = {}
+if raw_tags:
+    for tag in integration.adapter.get_product_tags(filter_ids=[t['id'] for t in raw_tags]):
+        lang_id = lang_map.get(tag['id_lang'])
+        if not lang_id:
+            continue
+        external_tag = integration.env['external.integration.tag']._get_or_create_external_tag(
+            tag['name'], 'product', integration.id, external_language_code=tag['id_lang'],
+        )
+        tags_by_lang_id.setdefault(lang_id, []).append(external_tag.id)
+
+odoo_name = field.get_odoo_field_name()
+commands = []
+all_lang_ids = list(lang_map.values())
+
+if template:
+    for lang_id in all_lang_ids:
+        group = template.get_or_create_tag_group(integration.id, lang_id)
+        tag_ids = tags_by_lang_id.get(lang_id, [])
+        commands.append((1, group.id, {'tag_ids': [(6, 0, tag_ids)]}))
+else:
+    for lang_id in all_lang_ids:
+        tag_ids = tags_by_lang_id.get(lang_id, [])
+        commands.append((0, 0, {
+            'integration_id': integration.id,
+            'external_language_id': lang_id,
+            'tag_ids': [(6, 0, tag_ids)],
+        }))
+
+value = {odoo_name: commands} if commands else {}
+            </field>
+            <field name="export_script">
+external_tags = template.external_tag_group_ids.filtered(
+    lambda g: g.integration_id.id == integration.id
+).mapped('tag_ids')
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: [
+        {'name': tag.name, 'language': tag.external_language_id.code}
+        for tag in external_tags
+    ],
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_product_template_cost" model="product.ecommerce.field">
+            <field name="name">Product Cost</field>
+            <field name="technical_name">wholesale_price</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__standard_price"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__standard_price'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value_ = field._extract_import_value(integration.id, external_data)
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: float(value_ or 0),
+}
+            </field>
+            <field name="export_script">
+if VARIANTS_COUNT &lt; 2:
+    value_dict = field \
+        .with_context(integration_force_product_export=FORCE_PRODUCT_EXPORT) \
+        ._build_export_field_dict(integration.id, template.id)
+
+    key, value_ = value_dict.popitem()
+
+    if value_:
+        value_ = str(round(float(value_), 6))
+
+    value = {
+        key: value_,
+    }
+else:
+    value = {}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_related_products" model="product.ecommerce.field">
+            <field name="name">Related Products</field>
+            <field name="technical_name">accessories</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="integration_prestashop.field_product_template__optional_product_ids" />
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration_prestashop.field_product_template__optional_product_ids'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+template_data, _ = external_data
+
+related_products, _ = integration._resolve_ps_accessories(template_data, raise_error=True)
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: [(6, 0, related_products.ids)],
+}
+            </field>
+            <field name="export_script">
+value_ = [{'id': x} for x in template.get_optional_products_external_ids(integration.id)]
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: value_,
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_template_weight" model="product.ecommerce.field">
+            <field name="name">Product Weight</field>
+            <field name="technical_name">weight</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__weight"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__weight'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+weight_uom = integration.adapter.get_weight_uom_for_converter()
+weight = field._extract_import_value(integration.id, external_data)
+
+value_ = env['uom.uom']._convert_external_weight_uom(weight, weight_uom)
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: value_,
+}
+            </field>
+            <field name="export_script">
+# We send weight for template only if it has not combinations
+
+if VARIANTS_COUNT &lt; 2:
+    weight_uom = integration.adapter.get_weight_uom_for_converter()
+    value_ = env['uom.uom']._convert_external_weight_uom(template.weight, weight_uom, is_import=False)
+
+    api_name = field.get_api_field_name()
+
+    value = {
+        api_name: str(round(value_, 6))
+    }
+else:
+    value = {}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_template_reference" model="product.ecommerce.field">
+            <field name="name">Product Reference</field>
+            <field name="technical_name">reference</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__default_code"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__default_code'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_template_barcode" model="product.ecommerce.field">
+            <field name="name">Product EAN13 (Barcode)</field>
+            <field name="technical_name">ean13</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="odoo_field_id" ref="product.field_product_template__barcode"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_template__barcode'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_template_default_availability_option" model="product.ecommerce.field">
+            <field name="name">Default Availability Option</field>
+            <field name="technical_name">out_of_stock</field>
+            <field name="type_api">prestashop</field>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+DENY_ORDER = 0
+ALLOW_ORDER = 1
+
+value = {}
+
+if 'allow_out_of_stock_order' in template:
+    value_ = integration.adapter.import_out_of_stock_option(EXTERNAL_CODE)
+
+    if value_ in [DENY_ORDER, ALLOW_ORDER]:
+        value = {
+            'allow_out_of_stock_order': bool(value_),
+        }
+            </field>
+            <field name="export_script">
+value = {}
+
+if not EXTERNAL_CODE:
+    if 'allow_out_of_stock_order' in template:
+        api_name = field.get_api_field_name()
+
+        data = {
+            'external_id': EXTERNAL_CODE,
+            api_name: int(template.allow_out_of_stock_order),
+        }
+
+        # TODO: improve it
+        integration.adapter.export_out_of_stock_option(data)
+            </field>
+        </record>
+
+        <!-- Product Variant Fields -->
+
+        <record id="prestashop_ecommerce_field_variant_extra_price" model="product.ecommerce.field">
+            <field name="name">Product Variant Extra price</field>
+            <field name="technical_name">price</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_product"/>
+            <field name="odoo_field_id" ref="integration.field_product_product__variant_extra_price"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('integration.field_product_product__variant_extra_price'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+# Price shouldn't be imported if pricelist for export was set (excluding the first time import)
+
+if integration.integration_pricelist_id and not FIRST_TIME_IMPORT:
+    value = {}
+else:
+    price = field._extract_import_value(integration.id, external_data)
+    value_ = float(price)
+
+    if integration.price_including_taxes:
+        template_data, _ = external_data
+        id_tax_rules_group = template_data['id_tax_rules_group']
+
+        if id_tax_rules_group and id_tax_rules_group != '0':
+            odoo_tax = integration._convert_external_tax(id_tax_rules_group)
+            if not odoo_tax:
+                raise UserError(
+                    'Cannot import product: tax "%s" is not mapped to an Odoo tax. '
+                    'Please map it in Mappings \u2192 Taxes or enable '
+                    '"Auto-Create Missing Taxes" on the integration.' % id_tax_rules_group
+                )
+            value_ = value_ * (1 + odoo_tax.amount / 100)
+
+    odoo_name = field.get_odoo_field_name()
+
+    value = {
+        odoo_name: value_,
+    }
+            </field>
+            <field name="export_script">
+pricelist = integration.integration_pricelist_id
+
+if pricelist:
+    variant_pricelist_price = pricelist._get_product_price(variant, 0)
+    template_pricelist_price = pricelist._get_product_price(template, 0)
+    price = variant_pricelist_price - template_pricelist_price
+else:
+    price = variant.price_extra
+
+value_ = variant.get_price_by_send_tax_incl(integration.id, price)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: str(round(value_, 6)),
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_variant_weight" model="product.ecommerce.field">
+            <field name="name">Product Variant Weight</field>
+            <field name="technical_name">weight</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_product"/>
+            <field name="odoo_field_id" ref="product.field_product_product__weight"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_product__weight'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+weight_uom = integration.adapter.get_weight_uom_for_converter()
+
+template_data, external_variant_data = external_data
+weight = float(template_data['weight']) + float(external_variant_data['weight'])
+
+value_ = env['uom.uom']._convert_external_weight_uom(weight, weight_uom)
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: value_,
+}
+            </field>
+            <field name="export_script">
+if VARIANTS_COUNT &lt; 2:
+    value_ = 0
+else:
+
+    weight_uom = integration.adapter.get_weight_uom_for_converter()
+    weight = float(
+        field._prepare_export_value(integration.id, variant.id) or 0
+    )
+
+    value_ = env['uom.uom']._convert_external_weight_uom(weight, weight_uom, is_import=False)
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: str(round(value_, 6)),
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_reference" model="product.ecommerce.field">
+            <field name="name">Product Variant Reference</field>
+            <field name="technical_name">reference</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_product"/>
+            <field name="odoo_field_id" ref="product.field_product_product__default_code"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_product__default_code'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_barcode" model="product.ecommerce.field">
+            <field name="name">Product Variant EAN13 (Barcode)</field>
+            <field name="technical_name">ean13</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_product"/>
+            <field name="odoo_field_id" ref="product.field_product_product__barcode"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_product__barcode'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script"/>
+            <field name="export_script"/>
+        </record>
+
+        <record id="prestashop_ecommerce_field_product_product_cost" model="product.ecommerce.field">
+            <field name="name">Product Variant Cost</field>
+            <field name="technical_name">wholesale_price</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_product"/>
+            <field name="odoo_field_id" ref="product.field_product_product__standard_price"/>
+            <field name="mapping_active_by_default" eval="True"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="True"/>
+            <field name="default_for_import" eval="True"/>
+            <field name="trackable_fields_ids" eval="[(6, 0, (ref('product.field_product_product__standard_price'),))]"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+value_ = field._extract_import_value(integration.id, external_data)
+
+odoo_name = field.get_odoo_field_name()
+
+value = {
+    odoo_name: float(value_ or 0),
+}
+            </field>
+            <field name="export_script">
+if VARIANTS_COUNT &lt; 2:
+    value_ = 0
+else:
+    value_ = float(
+        field._prepare_export_value(integration.id, variant.id) or 0
+    )
+
+api_name = field.get_api_field_name()
+
+value = {
+    api_name: str(round(value_, 6)),
+}
+            </field>
+        </record>
+
+        <record id="prestashop_ecommerce_field_product_brand" model="product.ecommerce.field">
+            <field name="name">Product Brand</field>
+            <field name="technical_name">id_manufacturer</field>
+            <field name="type_api">prestashop</field>
+            <field name="odoo_model_id" ref="product.model_product_template"/>
+            <field name="mapping_active_by_default" eval="False"/>
+            <field name="is_default" eval="True"/>
+            <field name="default_for_update" eval="False"/>
+            <field name="default_for_import" eval="False"/>
+            <field name="export_field_type">string</field>
+            <field name="import_script">
+module_installed = env['ir.module.module'].sudo().search_count([
+    ('name', '=', 'product_brand'),
+    ('state', '=', 'installed'),
+])
+
+if not module_installed or 'product_brand_id' not in env['product.template']._fields:
+    raise UserError(
+        'Please install module "product_brand" or deactivate "Product Brand" mapping.'
+    )
+
+template_data, _ = external_data
+
+brand_data = template_data.get('manufacturer_name')
+brand_name = brand_data.get('value') if isinstance(brand_data, dict) else brand_data
+
+value = {}
+
+if brand_name:
+    brand = env['product.brand'].search([('name', '=', brand_name)], limit=1)
+    if not brand:
+        brand = env['product.brand'].create({'name': brand_name})
+
+    value = {
+        'product_brand_id': brand.id,
+    }
+            </field>
+            <field name="export_script">
+module_installed = env['ir.module.module'].sudo().search_count([
+    ('name', '=', 'product_brand'),
+    ('state', '=', 'installed'),
+])
+
+if not module_installed or 'product_brand_id' not in template._fields:
+    raise UserError(
+        'Please install module "product_brand" or deactivate "Product Brand" mapping.'
+    )
+
+brand_name = template.product_brand_id.name
+value = {}
+
+if brand_name:
+    brand = integration.adapter._client.model('manufacturer').search_read(
+        filters={'name': brand_name},
+        fields=['id'],
+    )
+
+    if brand:
+        brand_id = brand[0]['id']
+    else:
+        presta_manufacturer = integration.adapter._client.model('manufacturer')
+        presta_manufacturer._to_update['name'] = brand_name
+        presta_manufacturer._to_update['active'] = '1'
+        presta_manufacturer.save()
+        brand_id = presta_manufacturer.id
+
+    value = {
+        'id_manufacturer': brand_id,
+    }
+            </field>
+        </record>
+
+    </data>
+</odoo>

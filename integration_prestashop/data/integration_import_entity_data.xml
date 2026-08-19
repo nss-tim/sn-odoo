@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_features">
+            <field name="name">Features</field>
+            <field name="integration_type">prestashop</field>
+            <field name="method_name">initial_import_features</field>
+            <field name="external_model">integration.product.feature.external</field>
+            <field name="mapping_model">integration.product.feature.mapping</field>
+            <field name="is_master_data">True</field>
+            <field name="supports_import_by_id">False</field>
+            <field name="consistency_method_name">get_features</field>
+        </record>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_feature_values">
+            <field name="name">Feature Values</field>
+            <field name="method_name">integrationApiImportFeatureValues</field>
+            <field name="external_model">integration.product.feature.value.external</field>
+            <field name="mapping_model">integration.product.feature.value.mapping</field>
+            <field name="integration_type">prestashop</field>
+            <field name="is_master_data">False</field>
+            <field name="supports_import_by_id">False</field>
+            <field name="consistency_method_name">get_feature_values</field>
+        </record>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_customer_groups">
+            <field name="name">Customer Groups</field>
+            <field name="integration_type">prestashop</field>
+            <field name="method_name">integrationApiImportCustomerGroups</field>
+            <field name="external_model">integration.customer.group.external</field>
+            <field name="mapping_model">integration.customer.group.mapping</field>
+            <field name="consistency_method_name">get_customer_groups</field>
+        </record>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_employees">
+            <field name="name">Employees</field>
+            <field name="integration_type">prestashop</field>
+            <field name="method_name">integrationApiImportEmployees</field>
+            <field name="external_model">integration.res.users.external</field>
+            <field name="mapping_model">integration.res.users.mapping</field>
+            <field name="consistency_method_name">get_users</field>
+        </record>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_pricelists">
+            <field name="name">Pricelists</field>
+            <field name="integration_type">prestashop</field>
+            <field name="method_name">integrationApiImportPricelists</field>
+            <field name="external_model">integration.product.pricelist.external</field>
+            <field name="mapping_model">integration.product.pricelist.mapping</field>
+            <field name="consistency_method_name">get_pricelists</field>
+        </record>
+
+        <record model="integration.import.entity" id="integration_prestashop_import_entity_tags">
+            <field name="name">Tags</field>
+            <field name="integration_type">prestashop</field>
+            <field name="method_name">integrationApiImportTagsPrestaShop</field>
+            <field name="external_model">external.integration.tag</field>
+        </record>
+
+    </data>
+</odoo>

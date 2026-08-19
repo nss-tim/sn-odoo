@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="test_integration_company_prestashop_nl" model="res.company">
+            <field name="name">Test Integration Company NL</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="country_id" ref="base.nl"/>
+        </record>
+
+        <!-- Account -->
+        <record id="integration_prestashop_account_a_income" model="account.account">
+            <field name="code">X2020</field>
+            <field name="name">Sales of Product Income (Prestashop test)</field>
+            <field name="account_type">income</field>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+        <record id="integration_prestashop_account_a_expense" model="account.account">
+            <field name="code">X2120</field>
+            <field name="name">Cost of Goods Sold (Prestashop test)</field>
+            <field name="account_type">expense</field>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+        <record id="integration_prestashop_account_a_recv" model="account.account">
+            <field name="code">X1012</field>
+            <field name="name">Debtors - (Prestashop test)</field>
+            <field name="account_type">asset_receivable</field>
+            <field name="reconcile" eval="True"/>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+        <record id="integration_prestashop_account_a_pay" model="account.account">
+            <field name="code">X1111</field>
+            <field name="name">Accounts Payable (A/P) (Prestashop test)</field>
+            <field name="account_type">liability_payable</field>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+        <record id="integration_prestashop_account_a_rsa" model="account.account">
+            <field name="code">X1113</field>
+            <field name="name">Reserve and Profit/Loss - (Prestashop test)</field>
+            <field name="account_type">asset_receivable</field>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+        <record id="integration_prestashop_account_a_cas" model="account.account">
+            <field name="code">X1010</field>
+            <field name="name">Current Assets - (Prestashop test)</field>
+            <field name="account_type">asset_current</field>
+            <field name="company_ids" eval="[(4, ref('test_integration_company_prestashop_nl'))]"/>
+        </record>
+
+        <!-- Account Journal -->
+        <record id="integration_prestashop_account_sales_journal_test" model="account.journal">
+            <field name="name">Customer Invoices Prestashop Test</field>
+            <field name="code">TINV</field>
+            <field name="type">sale</field>
+            <field name="refund_sequence" eval="True"/>
+            <field name="default_account_id" ref="integration_prestashop_account_a_income"/>
+            <field name="company_id" ref="test_integration_company_prestashop_nl"/>
+        </record>
+
+        <record id="integration_prestashop_account_cash_journal" model="account.journal">
+            <field name="name">Cash Prestashop Test</field>
+            <field name="code">TCSH</field>
+            <field name="type">cash</field>
+            <field name="profit_account_id" ref="integration_prestashop_account_a_rsa"/>
+            <field name="loss_account_id" ref="integration_prestashop_account_a_rsa"/>
+            <field name="company_id" ref="test_integration_company_prestashop_nl"/>
+        </record>
+
+        <!-- Payment methods -->
+        <record id="integration_prestashop_method_manual_in" model="account.payment.method">
+            <field name="name">Manual Prestashop In</field>
+            <field name="code">manual_in_prestashop_test</field>
+            <field name="payment_type">inbound</field>
+        </record>
+
+        <!-- Payment method line -->
+        <record id="integration_prestashop_line_check_in" model="account.payment.method.line">
+            <field name="journal_id" ref="integration_prestashop_account_cash_journal"/>
+            <field name="payment_account_id" ref="integration_prestashop_account_a_cas"/>
+            <field name="payment_method_id" ref="integration_prestashop_method_manual_in"/>
+        </record>
+
+        <!-- Integration -->
+        <record id="integration_prestashop_test_1" model="sale.integration">
+            <field name="name">IntegrationPrestashopTest</field>
+            <field name="type_api">prestashop</field>
+            <field name="company_id" ref="test_integration_company_prestashop_nl"/>
+            <field name="state">active</field>
+            <field name="integration_lang_id" ref="base.lang_nl"/>
+            <field name="export_template_job_enabled">False</field>
+            <field name="allow_export_images">False</field>
+            <field name="auto_create_delivery_carrier_on_so">True</field>
+            <field name="mandatory_fields_initial_product_export" eval="[(6, 0, (ref('product.field_product_product__default_code'),))]"/>
+        </record>
+
+        <!-- Taxes -->
+        <record id="integration_prestashop_account_tax_external_21" model="integration.account.tax.external">
+            <field name="code">25</field>
+            <field name="name">IVA ES 21%</field>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="integration_prestashop_account_tax_group_21" model="account.tax.group">
+            <field name="name">Tax 21.0%</field>
+            <field name="company_id" ref="test_integration_company_prestashop_nl"/>
+        </record>
+
+        <record id="integration_prestashop_account_tax_21" model="account.tax">
+            <field name="name">IVA ES 21%</field>
+            <field name="amount">21.0</field>
+            <field name="description">21.0%</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="price_include" eval="True"/>
+            <field name="tax_group_id" ref="integration_prestashop_account_tax_group_21"/>
+            <field name="company_id" ref="test_integration_company_prestashop_nl"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="integration_prestashop_account_tax_mapping_23" model="integration.account.tax.mapping">
+            <field name="external_tax_id" ref="integration_prestashop_account_tax_external_21"/>
+            <field name="tax_id" ref="integration_prestashop_account_tax_21"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <!-- Product 9154587918001 -->
+        <record id="prestashop_product_template_external_9154587918001" model="integration.product.template.external">
+            <field name="code">9154587918001</field>
+            <field name="name">Guitar Pro3</field>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_external_49620724449001" model="integration.product.product.external">
+            <field name="code">9154587918001-0</field>
+            <field name="name">Guitar Pro3</field>
+            <field name="external_reference">gtp3-ref-1-prestashop-test</field>
+            <field name="external_product_template_id" ref="prestashop_product_template_external_9154587918001"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_49620724449001" model="product.product">
+            <field name="name">Guitar Pro3</field>
+            <field name="default_code">gtp3-ref-1-prestashop-test</field>
+            <field name="lst_price">40</field>
+            <field name="standard_price">10</field>
+            <field name="type">consu</field>
+            <field name="is_storable">True</field>
+            <field name="taxes_id" eval="[(6, 0, (ref('integration_prestashop_account_tax_21'),))]"/>
+        </record>
+
+        <record id="prestashop_product_template_mapping_9154587918001" model="integration.product.template.mapping">
+            <field name="external_template_id" ref="prestashop_product_template_external_9154587918001"/>
+            <field name="template_id" ref=""/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_mapping_49620724449001" model="integration.product.product.mapping">
+            <field name="external_product_id" ref="prestashop_product_product_external_49620724449001"/>
+            <field name="product_id" ref="prestashop_product_product_49620724449001"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <!-- Product 8991067530001 -->
+        <record id="integration_prestashop_product_template_8991067530001" model="integration.product.template.external">
+            <field name="code">8991067530001</field>
+            <field name="name">Guitar1</field>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_external_47738503495001" model="integration.product.product.external">
+            <field name="code">8991067530001-0</field>
+            <field name="name">Guitar1</field>
+            <field name="external_reference">guit1-sku-bl-prestashop-test</field>
+            <field name="external_product_template_id" ref="integration_prestashop_product_template_8991067530001"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_47738503495001" model="product.product">
+            <field name="name">Guitar1</field>
+            <field name="default_code">guit1-sku-bl-prestashop-test</field>
+            <field name="lst_price">50</field>
+            <field name="standard_price">12</field>
+            <field name="type">consu</field>
+            <field name="is_storable">True</field>
+            <field name="taxes_id" eval="[(6, 0, (ref('integration_prestashop_account_tax_21'),))]"/>
+        </record>
+
+        <record id="prestashop_product_product_discount" model="product.product">
+            <field name="name">Discount Product Test</field>
+            <field name="default_code">discount-product-prestashop-test</field>
+            <field name="type">consu</field>
+        </record>
+
+        <record id="prestashop_product_template_mapping_8991067530001" model="integration.product.template.mapping">
+            <field name="external_template_id" ref="integration_prestashop_product_template_8991067530001"/>
+            <field name="template_id" ref=""/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="prestashop_product_product_mapping_47738503495001" model="integration.product.product.mapping">
+            <field name="external_product_id" ref="prestashop_product_product_external_47738503495001"/>
+            <field name="product_id" ref="prestashop_product_product_47738503495001"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <!-- Countries -->
+        <record id="integration_prestashop_res_country_external_nl" model="integration.res.country.external">
+            <field name="code">13</field>
+            <field name="name">Netherlands</field>
+            <field name="external_reference">NL</field>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="integration_prestashop_res_country_mapping_en" model="integration.res.country.mapping">
+            <field name="country_id" ref="base.nl"/>
+            <field name="external_country_id" ref="integration_prestashop_res_country_external_nl"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <!-- Langs -->
+        <record id="integration_prestashop_res_lang_external_nl" model="integration.res.lang.external">
+            <field name="code">1</field>
+            <field name="name">Netherlands</field>
+            <field name="external_reference">nl_NL</field>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <record id="integration_prestashop_res_lang_mapping_en" model="integration.res.lang.mapping">
+            <field name="language_id" ref="base.lang_nl"/>
+            <field name="external_language_id" ref="integration_prestashop_res_lang_external_nl"/>
+            <field name="integration_id" ref="integration_prestashop_test_1"/>
+        </record>
+
+        <!-- ecommerce.product.category-->
+        <record id="integration_prestashop_product_public_category_0" model="ecommerce.product.category">
+            <field name="name">Home-wexrwetest</field>
+        </record>
+
+        <record id="integration_prestashop_product_public_category_1" model="ecommerce.product.category">
+            <field name="name">Accessories-tesakjsex</field>
+            <field name="parent_id" ref="integration_prestashop_product_public_category_0"/>
+        </record>
+
+        <record id="integration_prestashop_product_public_category_2" model="ecommerce.product.category">
+            <field name="name">Home-Accessories-xwzkRtest</field>
+            <field name="parent_id" ref="integration_prestashop_product_public_category_1"/>
+        </record>
+
+    </data>
+</odoo>

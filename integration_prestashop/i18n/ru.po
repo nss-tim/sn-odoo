@@ -1,0 +1,1663 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* integration_prestashop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-05 10:13+0000\n"
+"PO-Revision-Date: 2026-04-11 08:32+0000\n"
+"Last-Translator: Mikhail Karalevich <mikhail.karalevich@ventor.tech>\n"
+"Language-Team: Russian <https://translate.ventor.tech/projects/e-commerce-"
+"connectors/19-0-e-commerce-connectors-prestashop/ru/>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.15.1\n"
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid ""
+"'Product Created' triggers before a product is fully saved, often missing "
+"key data. By contrast, 'Product Updated' fires once the product is complete."
+" If a new product is detected, it is created; otherwise, it is updated. This"
+" approach processes only fully created and published products, avoiding "
+"issues caused by incomplete information."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "<b>An error occurred</b>"
+msgstr "<b>Произошла ошибка</b>"
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "<b>Error Message:</b>"
+msgstr "<b>Сообщение о ошибке:</b>"
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid ""
+"<small>\n"
+"                                            Use this feature to integrate 'Product Special Prices' from your e-commerce platform into Odoo. Here you can link external pricelists with their corresponding Odoo pricelists and then synchronize them. The synchronization is one-way and pulls special pricing data from your e-commerce system to update the pricelists in Odoo, ensuring your system reflects the most up-to-date pricing strategies.\n"
+"                                        </small>"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid ""
+"<span class=\"badge rounded-pill d-flex align-items-center integration-api-badge-button\" invisible=\"not access_granted\" title=\"API Access Granted\">\n"
+"                                <i class=\"fa fa-check-circle me-2\" style=\"font-size: 1.1rem;\" title=\"API Access Granted\"/>\n"
+"                                <span>API Access Granted</span>\n"
+"                            </span>\n"
+"                            <span class=\"badge rounded-pill d-flex align-items-center integration-api-badge-button api-access-not-granted\" invisible=\"access_granted\" title=\"API Access Not Granted\">\n"
+"                                <i class=\"fa fa-exclamation-circle me-2\" style=\"font-size: 1.1rem;\" title=\"API Access Not Granted\"/>\n"
+"                                <span>API Access Not Granted</span>\n"
+"                            </span>"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid ""
+"<strong>Make your store feel more professional and automated — no custom "
+"coding required!</strong>"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_product_product__combination_default_id
+#: model:ir.model.fields,help:integration_prestashop.field_product_template__combination_default_id
+msgid "A combination that will be marked as standard in Prestashop."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__type_api
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__type_api
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__type_api
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__type_api
+msgid "API Service"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__access_granted
+msgid "Access Granted"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authorization
+msgid "Access Permissions"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__configuration_scope_ids
+msgid "Access Scopes Lines"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_shipping_so
+msgid ""
+"Activate this option to update the order status in the e-commerce system "
+"automatically when a sales order is marked as shipped in Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__additional_address_information
+msgid "Additional Address Info Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__admin_url
+msgid "Admin URL"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid "All Groups"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__integration_auth_prestashop__state__authentication
+msgid "Authentication"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__integration_auth_prestashop__state__authorization
+msgid "Authorization"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_ecommerce_product_category_external__auto_export
+msgid "Auto Synchronize if Child Selected"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"By default, Prestashop does not have webhooks functionality. Webhooks can be"
+" added only via 3rd party modules. We at VentorTech investigated available "
+"solutions on the Prestashop addons market and found that this %s module is "
+"suitable for this. Also, we communicated with the developers of this module "
+"and asked them to include in their plugin a few changes that are needed for "
+"our connector. So in order to use webhooks functionality with Prestashop, "
+"you need: <br/> (1) to purchase and install specified module <br/> (2) In "
+"Prestashop admin in the menu \"Advanced Parameters → Webservice\" for your "
+"API Key add permissions for \"webhooks\" resource."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Category and Inventory Settings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authorization
+msgid "Check Access Permissions"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Check Access Permissions →"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.action_view_prestashop_integration_authorization
+msgid "Check PrestaShop Permissions"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_res_partner__subscribed_to_newsletter_presta
+#: model:ir.model.fields,help:integration_prestashop.field_res_users__subscribed_to_newsletter_presta
+msgid "Check this box if the customer is subscribed to the newsletter."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__additional_address_information
+msgid ""
+"Choose the character or text field on the Customer record for storing any "
+"supplementary address details. This field will contain additional "
+"information from the corresponding e-commerce system field."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__sub_status_paid_id
+msgid ""
+"Choose the store order status to be applied to orders in the e-commerce "
+"system once the corresponding sales order in Odoo is fully paid."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__code
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__code
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__code
+msgid "Code"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__company_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__company_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__company_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__company_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__company_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__company_id
+msgid "Company"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__configuration_wizard_id
+msgid "Configuration Wizard"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__delivery_time
+msgid ""
+"Configure the \"Delivery Time\" for products to sync with PrestaShop. Ensure"
+" you specify the \"In-stock Delivery Days\" and \"Out-of-stock Delivery "
+"Days\" if you opt for a \"Specific delivery time for this product\"."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.action_view_prestashop_integration_authentication
+msgid "Connect to PrestaShop"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Connect to PrestaShop →"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Connection Authentication"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_ecommerce_field__type_api
+msgid "Connector Type"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_external__name
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_value_external__name
+#: model:ir.model.fields,help:integration_prestashop.field_integration_res_users_external__name
+msgid "Contains name of the External Object in selected Integration"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_external__external_reference
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_value_external__external_reference
+#: model:ir.model.fields,help:integration_prestashop.field_integration_res_users_external__external_reference
+msgid ""
+"Contains unique code of the External Object in the external system. Used for"
+" automated mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authorization
+msgid "Continue to Configuration →"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__create_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__create_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__customer_date_add
+msgid "Customer Date Add"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.ui.menu,name:integration_prestashop.menu_integration_customer_group_external
+msgid "Customer Groups"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_partner__customer_registration_date_presta
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_users__customer_registration_date_presta
+msgid "Customer registration date (Prestashop)"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__method_delete
+msgid "DELETE"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_res_partner__newsletter_registration_date_presta
+#: model:ir.model.fields,help:integration_prestashop.field_res_users__newsletter_registration_date_presta
+msgid "Date when the customer registered to the newsletter."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_res_partner__customer_registration_date_presta
+#: model:ir.model.fields,help:integration_prestashop.field_res_users__customer_registration_date_presta
+msgid "Date when the customer registered to the website."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_product__combination_default_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template__combination_default_id
+msgid "Default Combination"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__default_customer_group_field_id
+msgid "Default Customer Group Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__default_customer_group_id
+msgid "Default Customer Group ID"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__default_external_tax_id
+msgid "Default External Tax"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__language_integration_id
+msgid "Default Odoo Language for E-Commerce Store"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__language_default_id
+msgid "Default Shop Language"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__sale_integration__delivery_time__default
+msgid "Default delivery time"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__message_template_in_stock
+msgid ""
+"Define a message template for the \"Delivery time of in-stock products\" to "
+"be displayed in PrestaShop for products available in stock."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__message_template_out_of_stock
+msgid ""
+"Define a message template for the \"Delivery time of out-of-stock products "
+"with allowed orders\" to communicate delivery expectations on PrestaShop for"
+" products that are out of stock."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__delivery_time
+msgid "Delivery Time"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_product_feature__sequence
+#: model:ir.model.fields,help:integration_prestashop.field_product_feature_value__sequence
+msgid "Determine the display order"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_ecommerce_product_category__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_external_order_transaction__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_delivery_carrier_mapping__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_ecommerce_product_category_external__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_sale_order_factory__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_ecommerce_field__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_product__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_partner__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_users__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration_input_file__display_name
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Duplicated active %s found in PrestaShop. To resolve this issue:\n"
+"1. Go to your PrestaShop system and locate the following duplicated records.\n"
+"2. Ensure each %s has a unique value for its name and code.\n"
+"3. Once the duplicates are resolved, requeue the job or retry the action.\n"
+"\n"
+"Details:\n"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_ecommerce_product_category
+msgid "E-Commerce Product Category"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_ecommerce_product_category_external
+msgid "E-Commerce Product Category External"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_sale_integration
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__integration_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__integration_id
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_customer_group_external_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_external_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_mapping_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_value_external_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_value_mapping_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_res_users_external_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_res_users_mapping_view_search
+msgid "E-Commerce Store"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_ecommerce_field
+msgid "Ecommerce field depending on integration type"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_res_users_external_action
+#: model:ir.actions.act_window,name:integration_prestashop.integration_res_users_mapping_action
+#: model:ir.ui.menu,name:integration_prestashop.menu_res_users_external
+#: model:ir.ui.menu,name:integration_prestashop.menu_res_users_mapping
+msgid "Employees"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_cancel_so
+msgid ""
+"Enable this option to automatically update the order status in the "
+"e-commerce system when a sales order is cancelled in Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_so_invoice_status
+msgid ""
+"Enable this option to update the order status in the e-commerce system for "
+"sales orders that are invoiced or marked as paid in Odoo. Specific behaviors"
+" based on the payment method can be configured under \"Auto-Workflow → "
+"Payment Methods\", where you can adjust when the payment status is sent. By "
+"default, the action occurs when an order is fully invoiced, and all related "
+"invoices are \"Paid\" or \"In Payment\"."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__error_message
+msgid "Error Message"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__error_traceback
+msgid "Error Traceback"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/controllers/prestashop_webhook.py:0
+msgid "Error while parsing JSON data: %s"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_product_ecommerce_field__type_api
+msgid ""
+"Every field exists only together with it's e-commerce system. So here we "
+"define which e-commerce system this field is related to. This should be "
+"updated for every new integration."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_customer_group_external_action
+#: model:ir.model,name:integration_prestashop.model_integration_customer_group_external
+msgid "External Customer Group"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__external_feature_id
+msgid "External Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__external_feature_value_id
+msgid "External Feature Value"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_product_feature_value_external_action
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__external_feature_value_ids
+msgid "External Feature Values"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_product_feature_external_action
+msgid "External Features"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__external_id
+msgid "External ID"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.constraint,message:integration_prestashop.constraint_integration_customer_group_external_uniq
+msgid "External ID must be unique per integration"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__name
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__name
+msgid "External Name"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_sale_integration_input_file
+msgid "External Order"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_external_order_transaction
+msgid "External Order Payment Transaction"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__external_feature_id
+msgid "External Product Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.action_external_integration_prestashop_product_tag
+msgid "External Product Tags (Prestashop)"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__external_reference
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__external_reference
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__external_reference
+msgid "External Reference"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__external_user_id
+msgid "External User"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__feature_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__feature_id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__feature_id
+msgid "Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_template_feature_line
+msgid "Feature Line"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_product_feature_mapping_action
+msgid "Feature Mappings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_feature_value
+msgid "Feature Value"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.integration_product_feature_value_mapping_action
+msgid "Feature Value Mappings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.ui.menu,name:integration_prestashop.menu_feature_values_external
+#: model:ir.ui.menu,name:integration_prestashop.menu_feature_values_mapping
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_feature_form_view
+msgid "Feature Values"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.ui.menu,name:integration_prestashop.menu_features_external
+#: model:ir.ui.menu,name:integration_prestashop.menu_features_mapping
+msgid "Features"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Fetch"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__force_user_on_order_status_change
+msgid "Force User On Order Status Change"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__method_get
+msgid "GET"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Help &amp; Support"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/external/integration_customer_group_external.py:0
+msgid ""
+"How to resolve:\n"
+"\n"
+"\t1. Run an initial import to synchronize master data.\n"
+"\t2. Navigate to E-Commerce Integrations → %s → Initial Import → Import Master Data.\n"
+"\t3. Wait for the import jobs to complete and then restart this job.\n"
+"\n"
+"If the issue persists, please contact our support team for assistance: https://support.ventor.tech/"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_ecommerce_product_category__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_external_order_transaction__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_delivery_carrier_mapping__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_ecommerce_product_category_external__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_sale_order_factory__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_ecommerce_field__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_product__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_partner__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_users__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration_input_file__id
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__shared_stock
+msgid "If enabled - connector should use id_shop = 0 during stock export."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__force_user_on_order_status_change
+msgid ""
+"If enabled, when sending order status updates to Prestashop in order history"
+" we will record the name of the employee who changed this status. Connector "
+"will try to find the corresponding user from employee mappings to Odoo user."
+" Take care to make all the possible mappings for all your Odoo users."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_mapping_view_tree
+msgid "Import Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.server,name:integration_prestashop.integration_product_feature_external_action_run_import_features
+#: model:ir.actions.server,name:integration_prestashop.integration_product_feature_mapping_action_run_import_features
+msgid "Import Product Features"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "Import Special Prices"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__product_delivery_in_stock
+msgid "In-stock Delivery Duration Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__message_template_in_stock
+msgid "In-stock Delivery Message Template"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__integration_id
+msgid "Integration"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__integration_auth_prestashop_id
+msgid "Integration Auth Prestashop"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_delivery_carrier_mapping
+msgid "Integration Delivery Carrier Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/external/integration_customer_group_external.py:0
+msgid "Integration ID is required in the context."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_product_feature_external
+msgid "Integration Product Feature External"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_product_feature_mapping
+msgid "Integration Product Feature Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_product_feature_value_external
+msgid "Integration Product Feature Value External"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_product_feature_value_mapping
+msgid "Integration Product Feature Value Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_res_partner_proxy
+msgid "Integration Res Partner Proxy"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_res_users_external
+msgid "Integration Res Users External"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_res_users_mapping
+msgid "Integration Res Users Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_sale_order_factory
+msgid "Integration Sale Order Factory"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/controllers/prestashop_webhook.py:0
+msgid "Invalid JSON data"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"Invalid order status: \"%s\". Order status must be a valid integer. Please "
+"provide a numeric status ID."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"Invalid order status: empty or missing status provided. Please provide a "
+"valid order status ID."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"Invalid receive_orders_filter format: \"%s\". Expected format: \"[1]\", "
+"\"[1|2|3]\", or \"[]\"."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"It is not possible to import a product into Odoo because there is no default External Tax defined for the Tax Group \"%s\".\n"
+"\n"
+"Note: The tax group mapping is required in two scenarios:\n"
+"  - The \"Product Tax Group\" field mapping is active (to assign taxes to products), or\n"
+"  - The \"Price Including Tax\" option is enabled in the integration settings (to calculate net prices from tax-inclusive PrestaShop prices).\n"
+"\n"
+"To resolve this, click the \"Quick Configuration\" button in the integration settings \"%s\" to define the External Tax for this tax group. Alternatively, disable \"Price Including Tax\" in the integration settings if PrestaShop prices do not include taxes."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__language_mapping_ids
+msgid "Languages Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__write_uid
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_external__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_external__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_external__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__write_date
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authorization
+msgid ""
+"Listed below permissions needed to be enabled on Prestashop side, so connector will work properly.\n"
+"                            If you see some \"red lines\" below, then listed permission were not granted."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__pricelist_mapping_ids
+msgid ""
+"Manage the mapping between Odoo pricelists and external pricelists from your"
+" e-commerce system."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Mismatch in attribute values for PrestaShop variant with %s \"%s\". "
+"PrestaShop attributes: %s. Odoo attributes: %s. Ensure the combinations of "
+"attributes in PrestaShop and Odoo match for products with the same %s."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_customer_group_external__name
+msgid "Name"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__newsletter
+msgid "Newsletter"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_partner_proxy__newsletter_date_add
+msgid "Newsletter Date Add"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__newsletter_registration_date_id
+msgid "Newsletter Registration Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__subscribed_to_newsletter_id
+msgid "Newsletter Subscribed Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_partner__newsletter_registration_date_presta
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_users__newsletter_registration_date_presta
+msgid "Newsletter registration date (Prestashop)"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"No corresponding variant in Odoo with %s \"%s\" for PrestaShop product ID "
+"%s. Ensure variants in Odoo and PrestaShop match correctly."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "No mapped products found. Please import and map products first."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__sale_integration__delivery_time__none
+msgid "None"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_mapping_view_search
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_value_mapping_view_search
+msgid "Not Mapped"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_value_mapping__feature_value_id
+msgid "Odoo Feature Value"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Odoo Invoice Connector – Module for PrestaShop"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_product_feature_mapping__feature_id
+msgid "Odoo Product Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_res_users_mapping__user_id
+msgid "Odoo User"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_external_view_tree
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_product_feature_value_external_view_tree
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_res_users_external_view_tree
+msgid "Open Mapping"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_product__optional_product_ids
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template__optional_product_ids
+msgid "Optional Products"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_product_product__optional_product_ids
+#: model:ir.model.fields,help:integration_prestashop.field_product_template__optional_product_ids
+msgid ""
+"Optional Products are suggested whenever the customer hits *Add to Cart* "
+"(cross-sell strategy, e.g. for computers: warranty, software, etc.)."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__product_delivery_out_of_stock
+msgid "Out-of-stock Delivery Duration Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__message_template_out_of_stock
+msgid "Out-of-stock Delivery Message Template"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__method_post
+msgid "POST"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__method_put
+msgid "PUT"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop/base_model.py:0
+msgid ""
+"Please check your language mapping and provide a value for all languages."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop/base_model.py:0
+msgid "Please ensure this field is filled before proceeding."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid ""
+"Please review the error details below and correct your credentials if "
+"needed."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__product_ecommerce_field__type_api__prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__sale_integration__type_api__prestashop
+msgid "PrestaShop"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "PrestaShop Credentials"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_template_form_prestashop_inherit
+msgid "PrestaShop Specific Settings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_prestashop_access_scope_line
+msgid "Prestashop Access Scope Line"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__external_tax_group_id
+msgid "Prestashop External Tax Rule"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_integration_auth_prestashop
+msgid "Prestashop Integration Authentication"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "Prestashop Webhook Error: %s"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__pricelist_mapping_ids
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Pricelist Mappings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Pricelist Settings"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.ui.menu,name:integration_prestashop.menu_pricelist_external
+#: model:ir.ui.menu,name:integration_prestashop.menu_pricelist_mapping
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Pricelists"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__sequence
+msgid "Priority"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_feature
+msgid "Product Feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.product_feature_value_action
+#: model:ir.ui.menu,name:integration_prestashop.menu_catalog_feature_values
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_feature_value_form_view
+msgid "Product Feature Values"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.act_window,name:integration_prestashop.product_feature_action
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_product__feature_line_ids
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template__feature_line_ids
+#: model:ir.ui.menu,name:integration_prestashop.menu_catalog_features
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_feature_form_view
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_template_form_prestashop_inherit
+msgid "Product Features"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.ui.menu,name:integration_prestashop.menu_prestashop_product_tag_external
+msgid "Product Tags"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_template
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__product_tmpl_id
+msgid "Product Template"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_product_product
+msgid "Product Variant"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Product references \"%s\" found in multiple PrestaShop products: %s. This "
+"structure is not allowed because in Odoo, the same references already belong"
+" to a single product template and its variants. Please ensure the product "
+"structure in PrestaShop matches Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Product with ID \"%s\" does not exist in PrestaShop. Please verify the ID "
+"and try again."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Product with ID \"%s\" in PrestaShop is missing references for some "
+"combinations. Please add these references and relaunch the product export."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__is_valid_access_scopes
+msgid "Proven Access Scopes"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "Queue Jobs \"Synchronize Related Products\" are created"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_configuration_wizard_prestashop_tax_group
+msgid "Quick Configuration Prestashop Tax Group"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_configuration_wizard_prestashop
+msgid "Quick Configuration for Prestashop"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__order_status_ids
+msgid "Receive Orders in Status"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__customer_registration_date_id
+msgid "Registration Date Field"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop_tax_group__external_tax_ids
+msgid "Related Taxes"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__method_required
+msgid "Required"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Reset Credentials"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_prestashop_access_scope_line__resource_name
+msgid "Resource"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_ecommerce_product_category_external__is_root_category
+msgid "Root Category"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"Sale Integration setting \"PrestaShop weight units\" is not specified. To resolve this issue:\n"
+"1. Go to E-Commerce Integrations → Stores → <Your Store> → General tab.\n"
+"2. Deactivate integration using Deactivate button.\n"
+"3. Then activate the integration to populate weight unites automatically."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "See full traceback"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_template_form_prestashop_inherit
+msgid "Select a feature (e.g., Color, Size, Material)"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_external__type_api
+#: model:ir.model.fields,help:integration_prestashop.field_integration_product_feature_value_external__type_api
+#: model:ir.model.fields,help:integration_prestashop.field_integration_res_users_external__type_api
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__type_api
+msgid ""
+"Select the API service type for the current Sales Integration. This setting "
+"should be configured initially and must remain unchanged after the initial "
+"setup to ensure proper integration functionality."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__customer_registration_date_id
+msgid ""
+"Select the datetime field on the Customer record to record the original "
+"registration date of the customer, aligning with the \"Registration Date\" "
+"field from PrestaShop."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__default_customer_group_field_id
+msgid ""
+"Select the field in the Partner (res.partner) model where the default "
+"customer group from PrestaShop will be saved."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.product_template_form_prestashop_inherit
+msgid "Select the specific value for this feature"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__import_inactive_categories
+msgid ""
+"Select this option to include inactive categories from e-commerce system in "
+"the import process, allowing them to be managed within Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__sequence
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__shared_stock
+msgid "Shared Stock"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__show_initial_import
+msgid "Show Initial Import"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__show_next
+msgid "Show Next"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__show_previous
+msgid "Show Previous"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__show_start
+msgid "Show Start"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.actions.server,name:integration_prestashop.integration_product_feature_mapping_action_show_unmapped
+#: model:ir.actions.server,name:integration_prestashop.integration_product_feature_value_mapping_action_show_unmapped
+msgid "Show Unmapped Objects"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields.selection,name:integration_prestashop.selection__sale_integration__delivery_time__specific
+msgid "Specific delivery time to this product"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__product_delivery_out_of_stock
+msgid ""
+"Specify the Product template field (accepting only float or integer values) "
+"that holds the \"Out-of-stock Delivery Days\" for syncing with PrestaShop's "
+"equivalent attribute."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__subscribed_to_newsletter_id
+msgid ""
+"Specify the boolean field on the Customer record where the subscription "
+"status for newsletters will be reflected. This field corresponds to the "
+"\"Newsletter Subscribed\" status from PrestaShop."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__newsletter_registration_date_id
+msgid ""
+"Specify the datetime field on the Customer record to log the date and time "
+"when the customer subscribed to the newsletter. This syncs with the "
+"\"Newsletter Registration Date\" from PrestaShop."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_sale_integration__product_delivery_in_stock
+msgid ""
+"Specify the field from the Product template (accepting only float or integer"
+" values) to determine the \"In-stock Delivery Days\" for syncing with "
+"PrestaShop's corresponding setting."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__sub_status_cancel_id
+msgid ""
+"Specify the store order status that will be send to the e-commerce system "
+"when a sales order is cancelled in Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop__sub_status_shipped_id
+msgid ""
+"Specify the store order status that will be sent to the e-commerce system "
+"for orders marked as shipped in Odoo."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__state
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__state
+msgid "State"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__state_index
+msgid "State Index"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__state_name
+msgid "State Name"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Status"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__sub_status_cancel_id
+msgid "Store Order Status for Cancelled SO"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__sub_status_paid_id
+msgid "Store Order Status for Invoiced/Paid SO"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__sub_status_shipped_id
+msgid "Store Order Status for Shipped SO"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__url
+msgid "Store URL"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_partner__subscribed_to_newsletter_presta
+#: model:ir.model.fields,field_description:integration_prestashop.field_res_users__subscribed_to_newsletter_presta
+msgid "Subscribed to newsletter (Prestashop)"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_cancel_so
+msgid "Sync Cancelled SO Status"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_sale_integration__import_inactive_categories
+msgid "Sync Inactive Categories"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_so_invoice_status
+msgid "Sync Invoiced/Paid SO Status"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__run_action_on_shipping_so
+msgid "Sync Shipped SO Status"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Synchronize All"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Synchronize Related Products"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_configuration_wizard_prestashop__configuration_tax_group_ids
+msgid "Taxes for Each Tax Rule"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authentication
+msgid "Test Connection"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/product_template.py:0
+msgid ""
+"The \"In-stock Delivery Duration Field\" field is not specified in the Sale "
+"Integration settings. Please navigate to: E-Commerce Integrations → %s → "
+"Products tab, and configure the \"In-stock Delivery Duration Field\" field."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/product_template.py:0
+msgid ""
+"The \"Out-of-stock Delivery Duration Field\" field is not specified in the "
+"E-Commerce Store settings. Please navigate to: E-Commerce Integrations → "
+"Stores → %s → Products tab, and configure the \"Out-of-stock Delivery "
+"Duration Field\" field."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/product_feature_value.py:0
+msgid ""
+"The external feature code cannot be empty for the feature value \"%s\".\n"
+"\n"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid ""
+"The following accessory products are not yet mapped to Odoo products. Please map them in \"Mappings → Products\" and retry:\n"
+"%s"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"The number of combinations in PrestaShop (%s) does not match the number in "
+"Odoo (%s). Please ensure the product with ID %s in PrestaShop has the same "
+"number of combinations as the variants in Odoo (integration: \"%s\")."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/product_template_feature_line.py:0
+msgid ""
+"The selected Feature Value (\"%s\") does not belong to the Feature (\"%s\")."
+" Please select a matching Feature Value."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_configuration_wizard
+msgid ""
+"There is a difference between Prestashop and Odoo taxes definition on the product.\n"
+"                            On Prestashop you define \"Tax Rule\" for the product. While in Odoo you define \"Customer Tax\"\n"
+"                            on the product. So if we want to export Product from Odoo to Prestashop we need to take\n"
+"                            \"Customer Tax\" from Odoo product and convert it to \"Tax Rule\" that is understandable by Prestashop.\n"
+"                            Or if we want to import product from Prestashop to Odoo , we need to take \"Tax Rule\" defined\n"
+"                            in Prestashop Product and convert it to \"Customer Tax\".\n"
+"                            <br/>\n"
+"                            This mapping allows to define both Default Tax that will be used when importing product from Prestashop\n"
+"                            to Odoo. And also define which taxes are corresponding to which Tax Rule (that is needed when we\n"
+"                            exporting from Odoo to Prestashop)\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Note that you can drag&amp;drop tax groups to define their priority. First in the list will be used first.\n"
+"                            That is important when exporting products from Odoo to Prestashop. In case multiple tax rules found for the selected tax,\n"
+"                            connector will use tax rule with the highest priority"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid ""
+"This step is specifically added for users of the PrestaShop\n"
+"                                    connector. It ensures that your 'Related Products' from\n"
+"                                    PrestaShop are synchronized with Odoo's 'Optional Products'.\n"
+"                                    Once you have completed the product linking and mapping\n"
+"                                    process in Step 2, you can use this function to synchronize\n"
+"                                    the optional products in Odoo with the related products\n"
+"                                    defined in your PrestaShop system. It scans through the\n"
+"                                    related products information in PrestaShop and updates the\n"
+"                                    'Optional Products' field in Odoo accordingly, maintaining\n"
+"                                    consistency across both platforms."
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_integration_auth_prestashop__key
+msgid "Token"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "Unknown"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/controllers/prestashop_webhook.py:0
+msgid "Unknown webhook data"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model,name:integration_prestashop.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature_value__name
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_template_feature_line__feature_value_id
+msgid "Value"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,field_description:integration_prestashop.field_product_feature__value_ids
+msgid "Values"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid ""
+"We offer special module for PrestaShop that work seamlessly with this API route.\n"
+"                            Once installed, these modules allow your customers to download official Odoo invoices directly from their store account pages."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/models/sale_integration.py:0
+msgid "Webhook Integration"
+msgstr ""
+
+#. module: integration_prestashop
+#: model:ir.model.fields,help:integration_prestashop.field_configuration_wizard_prestashop_tax_group__sequence
+msgid ""
+"When exporting from Odoo to Prestashop, take the most priority item first in"
+" Order to define which Odoo Tax correspond to which tax group."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "Why the 'Product Created' Webhook Is Not Used in PrestaShop"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid ""
+"You are using PrestaShop 1.6, which has known issues with product packs. "
+"Please check this article for more details: "
+"https://ventortech.atlassian.net/servicedesk/customer/portal/1/article/634487313."
+" Affected product: \"%s\", bundle product: \"%s\"."
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/wizard/configuration_wizard_prestashop.py:0
+msgid "You must select at least one store order status to be imported."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "[Optional] Synchronize Related Products"
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop_api.py:0
+msgid "found in PrestaShop in the following records: "
+msgstr ""
+
+#. module: integration_prestashop
+#. odoo-python
+#: code:addons/integration_prestashop/prestashop/base_model.py:0
+msgid "the language mapping and ensure the correct data is available."
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.integration_auth_prestashop_form_authorization
+msgid "← Back"
+msgstr ""
+
+#. module: integration_prestashop
+#: model_terms:ir.ui.view,arch_db:integration_prestashop.view_sale_integration_form
+msgid "💡 Did You Know?"
+msgstr ""

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="integration_customer_group_mapping_view_tree" model="ir.ui.view">
+            <field name="name">integration.customer.group.mapping.view.list</field>
+            <field name="model">integration.customer.group.mapping</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="id" groups="base.group_no_one"/>
+                    <field name="integration_id"/>
+                    <field name="external_customer_group_id"/>
+                    <field name="sales_team_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="integration_customer_group_mapping_view_search" model="ir.ui.view">
+            <field name="name">integration.customer.group.mapping.view.search</field>
+            <field name="model">integration.customer.group.mapping</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="external_customer_group_id"/>
+                    <field name="sales_team_id"/>
+                    <field name="integration_id"/>
+                    <group>
+                        <filter string="E-Commerce Store" name="group_by_integration_id" context="{'group_by': 'integration_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="integration_customer_group_mapping_action" model="ir.actions.act_window">
+            <field name="name">Customer Groups</field>
+            <field name="path">eci-customer-group-mappings</field>
+            <field name="res_model">integration.customer.group.mapping</field>
+            <field name="view_mode">list</field>
+        </record>
+
+    </data>
+</odoo>

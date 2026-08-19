@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="integration_sale_order_sub_status_external_auto_workflow_view_tree" model="ir.ui.view">
+            <field name="name">integration.sale.order.sub.status.external.auto.workflow.view.list</field>
+            <field name="model">integration.sale.order.sub.status.external</field>
+            <field name="arch" type="xml">
+                <list create="0" decoration-muted="automation_steps_not_configured" action="action_open_workflow_wizard" type="object">
+                    <field name="company_id" column_invisible="1"/> <!-- Required because it is used in the fields domains in the model -->
+                    <field name="automation_steps_not_configured" column_invisible="1"/>
+                    <field name="integration_id"/>
+                    <field name="name"/>
+                    <field name="automation_steps_html" widget="html" width="600px"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="integration_sale_order_sub_status_external_auto_workflow_action" model="ir.actions.act_window">
+            <field name="name">Order Statuses</field>
+            <field name="path">eci-order-sub-statuses</field>
+            <field name="res_model">integration.sale.order.sub.status.external</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="integration_sale_order_sub_status_external_auto_workflow_view_tree"/>
+        </record>
+
+    </data>
+</odoo>

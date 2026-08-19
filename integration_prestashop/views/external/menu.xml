@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_integration_customer_group_external"
+                  name="Customer Groups"
+                  parent="integration.menu_external_prestashop_only"
+                  action="integration_customer_group_external_action"
+                  sequence="10"/>
+
+        <menuitem id="menu_res_users_external"
+                  name="Employees"
+                  parent="integration.menu_external_prestashop_only"
+                  action="integration_res_users_external_action"
+                  groups="base.group_no_one"
+                  sequence="20"/>
+
+        <menuitem id="menu_features_external"
+                  name="Features"
+                  parent="integration.menu_external_prestashop_only"
+                  action="integration_product_feature_external_action"
+                  sequence="30"/>
+
+        <menuitem id="menu_feature_values_external"
+                  name="Feature Values"
+                  parent="integration.menu_external_prestashop_only"
+                  action="integration_product_feature_value_external_action"
+                  sequence="40"/>
+
+        <record id="prestashop_product_pricelist_external_action" model="ir.actions.act_window">
+            <field name="name">Pricelists</field>
+            <field name="res_model">integration.product.pricelist.external</field>
+            <field name="view_mode">list</field>
+            <field name="domain">[('integration_id.type_api', '=', 'prestashop')]</field>
+        </record>
+
+        <menuitem id="menu_pricelist_external"
+                  name="Pricelists"
+                  parent="integration.menu_external_prestashop_only"
+                  action="prestashop_product_pricelist_external_action"
+                  sequence="50"/>
+
+        <menuitem id="menu_prestashop_product_tag_external"
+                  name="Product Tags"
+                  parent="integration.menu_external_prestashop_only"
+                  action="action_external_integration_prestashop_product_tag"
+                  sequence="60"/>
+
+    </data>
+</odoo>

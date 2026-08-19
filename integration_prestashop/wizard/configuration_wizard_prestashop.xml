@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_configuration_wizard" model="ir.ui.view">
+            <field name="name">configuration.wizard.prestashop.form</field>
+            <field name="model">configuration.wizard.prestashop</field>
+            <field name="inherit_id" ref="integration.view_configuration_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <div name="step_tax_group" invisible="state != 'step_tax_group'">
+                        <div class="alert alert-info" role="alert">
+                            There is a difference between Prestashop and Odoo taxes definition on the product.
+                            On Prestashop you define "Tax Rule" for the product. While in Odoo you define "Customer Tax"
+                            on the product. So if we want to export Product from Odoo to Prestashop we need to take
+                            "Customer Tax" from Odoo product and convert it to "Tax Rule" that is understandable by Prestashop.
+                            Or if we want to import product from Prestashop to Odoo , we need to take "Tax Rule" defined
+                            in Prestashop Product and convert it to "Customer Tax".
+                            <br/>
+                            This mapping allows to define both Default Tax that will be used when importing product from Prestashop
+                            to Odoo. And also define which taxes are corresponding to which Tax Rule (that is needed when we
+                            exporting from Odoo to Prestashop)
+                            <br/>
+                            <br/>
+                            Note that you can drag&amp;drop tax groups to define their priority. First in the list will be used first.
+                            That is important when exporting products from Odoo to Prestashop. In case multiple tax rules found for the selected tax,
+                            connector will use tax rule with the highest priority
+                        </div>
+                        <field name="configuration_tax_group_ids" nolabel="1">
+                            <list editable="bottom" create="0" delete="0">
+                                <field name="sequence" widget="handle"/>
+                                <field name="external_tax_group_id"/>
+                                <field name="external_tax_ids"
+                                       widget="many2many_tags"
+                                />
+                                <field name="default_external_tax_id" domain="[('id', 'in', external_tax_ids)]"/>
+                            </list>
+                        </field>
+                    </div>
+                    <group name="step_order_status" invisible="state != 'step_order_status'">
+                        <field name="order_status_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="run_action_on_cancel_so"/>
+                        <field name="sub_status_cancel_id" required="run_action_on_cancel_so" invisible="not run_action_on_cancel_so"/>
+                        <field name="export_tracking_job_enabled"/>
+                        <field name="sub_status_shipped_id" required="export_tracking_job_enabled" invisible="not export_tracking_job_enabled"/>
+                        <field name="run_action_on_so_invoice_status"/>
+                        <field name="sub_status_paid_id" required="run_action_on_so_invoice_status" invisible="not run_action_on_so_invoice_status"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

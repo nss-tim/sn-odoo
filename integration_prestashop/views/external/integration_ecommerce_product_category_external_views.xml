@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="integration_ecommerce_product_category_external_view_tree_inherit_presta" model="ir.ui.view">
+            <field name="name">integration.ecommerce.product.category.external.view.list.inherit.presta</field>
+            <field name="model">integration.ecommerce.product.category.external</field>
+            <field name="inherit_id" ref="integration.integration_ecommerce_product_category_external_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']/." position="after">
+                    <field name="type_api" column_invisible="1"/>  <!-- Needed to show / hide auto export toggle -->
+                    <field name="auto_export" invisible="type_api != 'prestashop'" widget="boolean_toggle"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

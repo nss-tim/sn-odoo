@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_features_mapping"
+                  name="Features"
+                  parent="integration.menu_mappings_prestashop_only"
+                  action="integration_product_feature_mapping_action"
+                  sequence="10"/>
+
+        <menuitem id="menu_feature_values_mapping"
+                  name="Feature Values"
+                  parent="integration.menu_mappings_prestashop_only"
+                  action="integration_product_feature_value_mapping_action"
+                  sequence="20"/>
+
+        <menuitem id="menu_res_users_mapping"
+                  name="Employees"
+                  parent="integration.menu_mappings_prestashop_only"
+                  sequence="30"
+                  action="integration_res_users_mapping_action"/>
+
+        <menuitem id="menu_customer_group_mapping"
+                  name="Customer Groups"
+                  parent="integration.menu_mappings_prestashop_only"
+                  sequence="40"
+                  action="integration_customer_group_mapping_action"/>
+
+        <record id="prestashop_product_pricelist_mapping_action" model="ir.actions.act_window">
+            <field name="name">Pricelist Mappings</field>
+            <field name="res_model">integration.product.pricelist.mapping</field>
+            <field name="view_mode">list</field>
+            <field name="domain">[('integration_id.type_api', '=', 'prestashop')]</field>
+            <field name="context">{'search_default_not_mapped': 1}</field>
+        </record>
+
+        <menuitem id="menu_pricelist_mapping"
+                  name="Pricelists"
+                  parent="integration.menu_mappings_prestashop_only"
+                  sequence="50"
+                  action="prestashop_product_pricelist_mapping_action"/>
+
+    </data>
+</odoo>

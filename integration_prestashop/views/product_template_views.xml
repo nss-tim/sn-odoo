@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form_prestashop_inherit" model="ir.ui.view">
+        <field name="name">product.template.integration.prestashop.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="integration.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='external_tag_group_ids']//list//field[@name='integration_id']" position="after">
+                <field name="external_language_id" options="{'no_create': True}" invisible="integration_type_api != 'prestashop'" readonly="not integration_id" domain="[('integration_id', '=', integration_id)]"/>
+            </xpath>
+
+            <xpath expr="//field[@name='external_tag_group_ids']//list//field[@name='tag_ids']" position="attributes">
+                <attribute name="readonly">not integration_id or (integration_type_api == 'prestashop' and not external_language_id)</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='store_specific_settings']" position="inside">
+                <group name="prestashop_settings" string="PrestaShop Specific Settings">
+                    <field name="to_force_sync_pricelist" groups="base.group_no_one"/>
+                    <field name="product_variant_ids" invisible="1"/> <!-- Required because it is used in the fields domains below -->
+                    <field name="combination_default_id" domain="[('id', 'in', product_variant_ids)]"/>
+                    <field name="optional_product_ids"
+                            widget="many2many_tags"
+                            options="{'color_field': 'color'}"
+                            domain="[('id', '!=', id), '|', ('company_id', '=', company_id), ('company_id', '=', False)]"
+                            groups="product.group_product_variant"/>
+                    <field name="feature_line_ids" widget="one2many" colspan="2">
+                        <list editable="bottom" string="Product Features">
+                            <field name="feature_id" help="Select a feature (e.g., Color, Size, Material)"/>
+                            <field name="feature_value_id" context="{'default_feature_id': feature_id}" help="Select the specific value for this feature"/>
+                        </list>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
