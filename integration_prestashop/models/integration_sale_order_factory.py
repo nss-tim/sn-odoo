@@ -7,6 +7,14 @@ from odoo.tools.float_utils import float_is_zero, float_round
 class IntegrationSaleOrderFactory(models.TransientModel):
     _inherit = 'integration.sale.order.factory'
 
+    def _prepare_order_line_price(self, order, price):
+        price = super()._prepare_order_line_price(order, price)
+
+        if not self.integration_id.is_integration_prestashop:
+            return price
+
+        return order.currency_id.round(price)
+
     def _get_sales_team_id(self, order_data):
         integration = self.integration_id
         customer_group_id = order_data.get('customer', {}).get('default_customer_group_id')

@@ -454,6 +454,33 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
 
         self.assertEqual(data['payment_transactions'], [])
 
+    def test_order_line_price_is_rounded_by_order_currency(self):
+        input_file = self.env['sale.integration.input.file'].with_context(
+            skip_create_order_from_input=True,
+        ).create({
+            'si_id': self.integration.id,
+            'name': 'price-rounding-test',
+            'raw_data': '{}',
+        })
+        factory = self.env['integration.sale.order.factory'].create({
+            'input_file_id': input_file.id,
+        })
+        order = self.env['sale.order'].new({
+            'company_id': self.company.id,
+            'pricelist_id': self.env['product.pricelist'].search([
+                ('currency_id', '=', self.env.ref('base.EUR').id),
+            ], limit=1).id,
+        })
+
+        self.assertEqual(
+            factory._prepare_order_line_price(order, 33.057851),
+            33.06,
+        )
+        self.assertEqual(
+            factory._prepare_order_line_price(order, 79.032320),
+            79.03,
+        )
+
     def test_create_order_from_input(self):
         # `_run_and_call_next` (used by `_run_step_sync()` now) would otherwise cascade through
         # the whole remaining pipeline on success under `queue_job__no_delay` - this
@@ -757,3 +784,63 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
         payment.ensure_one()
         self.assertTrue(payment.state in ('paid', 'in_process'))
         self.assertEqual(round(payment.amount, 2), 1435.06)
+
+    def test_export_out_of_stock_option_existing_product(self):
+        template = self.product1.product_tmpl_id
+
+        field = self.env.ref(
+            'integration_prestashop.prestashop_ecommerce_field_template_default_availability_option'
+        )
+
+        exported_data = {}
+
+        def export_out_of_stock_option(adapter, data):
+            exported_data.update(data)
+            return True
+
+        self.classPatch(
+            PrestashopAPIClientPatchTest,
+            'export_out_of_stock_option',
+            export_out_of_stock_option,
+        )
+
+        if 'allow_out_of_stock_order' not in template:
+            field.calculate_export_value(self.integration.id, template.id)
+            self.assertFalse(exported_data)
+            return
+
+        template.allow_out_of_stock_order = True
+
+        field.calculate_export_value(self.integration.id, template.id)
+
+        self.assertEqual(
+            exported_data,
+            {
+                'external_id': '9100500',
+                'out_of_stock': 1,
+            },
+        )
+
+    def test_skip_out_of_stock_option_for_new_product(self):
+        template = self.env['product.template'].create({
+            'name': 'Test Product',
+        })
+
+        field = self.env.ref(
+            'integration_prestashop.prestashop_ecommerce_field_template_default_availability_option'
+        )
+
+        called = []
+
+        def export_out_of_stock_option(adapter, data):
+            called.append(data)
+            return True
+
+        self.classPatch(
+            PrestashopAPIClientPatchTest,
+            'export_out_of_stock_option',
+            export_out_of_stock_option,
+        )
+
+        field.calculate_export_value(self.integration.id, template.id)
+        self.assertFalse(called)

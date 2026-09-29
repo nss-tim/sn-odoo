@@ -15,9 +15,9 @@
                     <field name="integration_id" readonly="1" invisible="1" /> <!-- Required because it is used in the fields domains in the model -->
 
                     <group string="PrestaShop Credentials">
-                        <field name="url" required="1" readonly="access_granted"/>
-                        <field name="admin_url" required="1" readonly="access_granted"/>
-                        <field name="key" required="1" readonly="access_granted" password="True"/>
+                        <field name="url" required="not access_granted" readonly="access_granted"/>
+                        <field name="admin_url" required="not access_granted" readonly="access_granted"/>
+                        <field name="key" required="not access_granted" readonly="access_granted" password="True"/>
                     </group>
 
                     <group string="Status">

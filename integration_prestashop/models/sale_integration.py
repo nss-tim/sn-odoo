@@ -352,19 +352,11 @@ class SaleIntegration(models.Model):
         ])
 
         if not mappings:
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': _('Synchronize Related Products'),
-                    'message': _(
-                        'No mapped products found. '
-                        'Please import and map products first.'
-                    ),
-                    'type': 'warning',
-                    'sticky': False,
-                },
-            }
+            return self.display_integration_notification(
+                _('No mapped products found. Please import and map products first.'),
+                title=_('Synchronize Related Products'),
+                ttype='warning',
+            )
 
         external_codes = mappings.mapped('external_template_id.code')
         block = 1
@@ -385,18 +377,9 @@ class SaleIntegration(models.Model):
             block += 1
             external_codes = external_codes[limit:]
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Synchronize Related Products'),
-                'message': _(
-                    'Queue Jobs "Synchronize Related Products" are created'
-                ),
-                'type': 'success',
-                'sticky': False,
-            },
-        }
+        return self.display_integration_notification(
+            _('Queue Jobs "Synchronize Related Products" are created'), title=_('Synchronize Related Products'),
+        )
 
     def run_sync_related_products_batch(self, external_codes):
         """Worker job: fetch PS accessories for a batch of products and
@@ -839,19 +822,18 @@ class SaleIntegration(models.Model):
     def run_import_special_prices(self):
         mappings = self.pricelist_mapping_ids.filtered(lambda x: x.pricelist_id)
 
+        if not mappings:
+            return self.display_integration_notification(
+                _('No pricelists are mapped. Please configure pricelist mappings first.'),
+                title=_('Import Special Prices'), ttype='warning',
+            )
+
         for record in mappings:
             record.import_special_prices_mapping()
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Import Special Prices'),
-                'message': 'Queue Jobs "Import Special Prices" were created',
-                'type': 'success',
-                'sticky': False,
-            },
-        }
+        return self.display_integration_notification(
+            _('Queue Jobs "Import Special Prices" are created'), title=_('Import Special Prices'),
+        )
 
     def run_export_special_prices(self):
         mappings = self.pricelist_mapping_ids.filtered(lambda x: x.pricelist_id)
@@ -867,16 +849,9 @@ class SaleIntegration(models.Model):
             .with_delay(**job_kwargs) \
             .export_pricelists_multi(pricelist_ids=pricelist_ids.ids)
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Export Special Prices'),
-                'message': 'Queue Job "Export Special Prices" was created',
-                'type': 'success',
-                'sticky': False,
-            },
-        }
+        return self.display_integration_notification(
+            _('Queue Job "Export Special Prices" is created'), title=_('Export Pricelists to PrestaShop'),
+        )
 
     def fetch_pricelist_from_external(self):
         self.integrationApiImportPricelists()
@@ -884,10 +859,9 @@ class SaleIntegration(models.Model):
         self = self.with_context(active_id=self.id)
         self.pricelist_mapping_ids = [(6, 0, self._get_default_pricelist_mapping_ids())]
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'reload',
-        }
+        return self.display_integration_notification(
+            _('Customer groups have been fetched.'), title=_('Fetch Customer Groups'), reload=True,
+        )
 
     def _is_specific_price_duplicate_validation_enabled(self):
         return True

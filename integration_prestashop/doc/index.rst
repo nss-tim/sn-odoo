@@ -15,6 +15,19 @@ Get started with our installation and configuration guide: https://ventortech.at
 Release Notes
 -------------
 
+* 2.3.0 (2026-09-29)
+    - [NEW] The "Returns & Refunds" tab is now visible on every store connection, not only Shopify and WooCommerce. Connectors that do not support the feature yet show a short explanation instead of the settings, with a way to tell us what you would expect from it.
+    - [IMP] Buttons that start an action now show a confirmation message saying what happened, for example that background jobs were created or that there was nothing to do. This applies to "Export to Stores", "Create Webhooks", "Import Taxes", "Import Categories", "Import Customers" and "Import Stock Levels". Previously many of these buttons gave no feedback at all.
+    - [FIX] Selecting order statuses that belong to different store connections in the bulk wizard for configuring order-status automation is now rejected with a clear message. Previously the wizard could silently apply the configuration using another store's invoice journal.
+    - [FIX] Fixed the Quick Configuration wizard getting stuck on the connection step for already authorized stores. Credential fields that are hidden once access is granted no longer block the wizard as "required".
+    - [FIX] "Delete Webhooks" no longer removes the webhook records in Odoo when removing them from the store fails. You can retry, or remove them in the store manually.
+    - [FIX] Fixed a promotional price being exported for products that no rule of the "Sale Pricelist for Product Export" applies to. Odoo returned the product's regular price as the pricelist price, and the connector sent it as a sale price. Now a promotional price is exported only when a pricelist rule actually matches.
+    - [FIX] Fixed products being matched by barcode during import when "Variant Barcode Validation" is turned off, which could link a store product to the wrong Odoo product.
+    - [FIX] Fixed real-time stock export failing when the stock change was made by a user without access to all companies whose warehouses are used for the store's stock.
+    - [FIX] Fixed order lines imported from PrestaShop getting unit prices with more decimals than the order currency allows, which caused small rounding differences in order totals.
+    - [FIX] Fixed the "Default Availability Option" not being exported for products that already exist in PrestaShop.
+    - [FIX] Other improvements and fixes implemented to boost overall performance, stability, and reliability.
+
 * 2.2.1 (2026-08-17)
     - [IMP] A failed auto-workflow step is now also reported as a failed background job with the same error message shown on the "Order Automation" form, so stuck orders are visible in the Job Queue and in any job failure notifications you have configured. Retrying or skipping the step is still done from the "Order Automation" form.
     - [IMP] Retrying a failed automation step no longer leaves its earlier failed background jobs behind — once the step succeeds or is skipped, previous attempts are cancelled automatically. Steps that are not part of a status's automation no longer create background jobs at all.

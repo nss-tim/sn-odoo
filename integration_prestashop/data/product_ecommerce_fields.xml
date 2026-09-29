@@ -770,7 +770,7 @@ if 'allow_out_of_stock_order' in template:
             <field name="export_script">
 value = {}
 
-if not EXTERNAL_CODE:
+if EXTERNAL_CODE:
     if 'allow_out_of_stock_order' in template:
         api_name = field.get_api_field_name()
 

@@ -24,13 +24,7 @@ class IntegrationProductPricelistMapping(models.Model):
         external.with_context(**context) \
             .with_delay(**job_kwargs).import_special_prices_external()
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('%s: Import Special Prices') % external.name,
-                'message': _('%s: Queue Jobs "Import Special Prices" were created') % external.name,
-                'type': 'success',
-                'sticky': False,
-            },
-        }
+        return self.display_integration_notification(
+            _('%s: Queue Job "Import Special Prices" is created') % external.name,
+            title=_('%s: Synchronize') % external.name,
+        )
