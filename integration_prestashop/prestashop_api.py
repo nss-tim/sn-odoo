@@ -716,6 +716,8 @@ class PrestaShopApiClient(AbsApiClient):
         if addresses:
             addresses.sort(key=lambda x: x['date_add'], reverse=True)
             addresses[0]['type'] = 'invoice'
+            for address in addresses[1:]:
+                address['type'] = 'other'
 
         parsed_customer = self._parse_customer(customer)
         parsed_addresses = [self._parse_address(customer, x) for x in addresses]

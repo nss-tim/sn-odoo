@@ -15,6 +15,15 @@ Get started with our installation and configuration guide: https://ventortech.at
 Release Notes
 -------------
 
+* 2.3.1 (2026-10-22)
+    - [FIX] Customer import kept only the most recently added address of a PrestaShop customer and dropped all the others. All addresses are now imported: the most recent one as the customer's address, the older ones as addresses of type "Other".
+    - [FIX] The "Payment Method" set on an external payment method is now also used for advance payments registered by "Register Advance Payment" when the store sends no payment transactions, and for store transactions that do not name a payment gateway, which now take the payment method of the order. Before, these payments were registered with the default payment method of the journal.
+    - [FIX] Importing a customer whose addresses belong to different companies no longer moves the customer to the company of its last address. The customer and its company are now decided by its default billing and shipping addresses, and each further address is imported as an address of type "Other" under its own company. If a customer was already imported with this problem, importing it again moves it back to its main company and adds the address of the other company once more, as an "Other" address next to the contact created earlier.
+    - [FIX] When the delivery address of an imported order belongs to a different company than the customer, it is now created under that company, even if its street is the same as the customer's address. Before, such a delivery address was merged into the customer.
+    - [FIX] "Auto-Export Shipments & Tracking" no longer skips a validated delivery when the operation type prints documents on validation, for example with "Auto Print Delivery Slip" or "Auto Print Carrier Labels" enabled. Before, such an order was not marked as shipped in the store and its tracking number was not sent.
+    - [FIX] Removed the "Create Products in Odoo (Using External Records)" method from the "Execute Method (Debug)" list on the Testing tab of the store connection. It was available only in developer mode and failed with an error on every run. To create Odoo products from the products already imported from the store, use "Create in Odoo" on the product mappings. All other debug methods are unchanged.
+    - [FIX] Other improvements and fixes implemented to boost overall performance, stability, and reliability.
+
 * 2.3.0 (2026-09-29)
     - [NEW] The "Returns & Refunds" tab is now visible on every store connection, not only Shopify and WooCommerce. Connectors that do not support the feature yet show a short explanation instead of the settings, with a way to tell us what you would expect from it.
     - [IMP] Buttons that start an action now show a confirmation message saying what happened, for example that background jobs were created or that there was nothing to do. This applies to "Export to Stores", "Create Webhooks", "Import Taxes", "Import Categories", "Import Customers" and "Import Stock Levels". Previously many of these buttons gave no feedback at all.

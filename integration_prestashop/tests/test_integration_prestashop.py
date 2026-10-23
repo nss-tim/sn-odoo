@@ -1,5 +1,7 @@
 # See LICENSE file for full copyright and licensing details.
 
+from unittest.mock import patch
+
 from odoo.tests import tagged
 from odoo.exceptions import UserError
 from odoo.addons.integration.tools import Adapter
@@ -158,6 +160,35 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
         )
 
         self.assertEqual(template_list[0]['id'], '9100500')
+
+    def test_get_customer_and_addresses_marks_secondary_addresses_as_other(self):
+        address_model = self.adapter._client.model('address')
+        primary_address = address_model.read_one('6')
+        primary_address.update({
+            'id': '7',
+            'company': 'Primary Company',
+            'date_add': '2026-09-30 10:00:00',
+        })
+        secondary_address = address_model.read_one('6')
+        secondary_address.update({
+            'id': '8',
+            'company': 'Secondary Company',
+            'address1': 'Secondary Street 2',
+            'date_add': '2026-09-29 10:00:00',
+        })
+
+        with patch.object(
+            type(address_model),
+            'search_read',
+            return_value=[secondary_address, primary_address],
+        ):
+            _, addresses = self.adapter.get_customer_and_addresses('3')
+
+        self.assertEqual(len(addresses), 2)
+        self.assertEqual(addresses[0]['company_name'], 'Primary Company')
+        self.assertEqual(addresses[0]['type'], 'invoice')
+        self.assertEqual(addresses[1]['company_name'], 'Secondary Company')
+        self.assertEqual(addresses[1]['type'], 'other')
 
     def test_convert_product_fields_in_and_out(self):
         t, (v1, v2), errors, __ = self.integration._import_external_product(
