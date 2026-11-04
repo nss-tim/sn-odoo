@@ -137,11 +137,17 @@ class PrestashopAPIClientPatchTest(PrestaShopApiClient):
             return []
         raise NotImplementedError
 
+    def export_out_of_stock_option(self, data):
+        return True
+
     def _get_carrier_tax_ids(self, *args, **kw):
         return ['25'], '0'
 
     def _get_taxes_by_tax_rule(self, *args, **kw):
         return [], '0'
+
+    def get_single_tax(self, tax_id):
+        return next((x for x in self.get_taxes() if x['id'] == tax_id), dict())
 
     def get_taxes(self):
         return [

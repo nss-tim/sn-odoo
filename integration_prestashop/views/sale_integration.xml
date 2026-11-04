@@ -39,7 +39,7 @@
                         Requires mapping Odoo users to PrestaShop employees (under Mappings). If a user is not mapped, the status change is still sent, but without an employee.
                     </div>
                 </xpath>
-                <field name="is_import_dynamic_attribute" position="after">
+                <field name="send_inactive_product" position="after">
                     <field name="delivery_time" invisible="not is_integration_prestashop"/>
                     <field name="product_delivery_in_stock" invisible="not is_integration_prestashop or delivery_time != 'specific'" required="delivery_time == 'specific'"/>
                     <field name="message_template_in_stock" invisible="not is_integration_prestashop or delivery_time != 'specific'" required="delivery_time == 'specific'"/>

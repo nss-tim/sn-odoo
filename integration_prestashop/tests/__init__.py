@@ -7,3 +7,6 @@ from . import test_receive_orders_pagination
 from . import test_is_importable_order_status
 from . import test_is_importable_product
 from . import test_product_tags
+from . import test_product_type_import
+from . import test_job_feature_value_buttons
+from . import test_prestashop_single_tax

@@ -250,9 +250,41 @@ class PrestaShopApiClient(AbsApiClient):
         return [(x['id'], x['name']) for x in shop_groups]
 
     def get_single_tax(self, tax_id):
-        taxes = self.get_taxes()
-        tax_list = [x for x in taxes if x['id'] == tax_id]
-        return tax_list and tax_list[0] or dict()
+        """
+        Fetch one tax with its tax rule groups instead of the whole tax table: three requests whatever the
+        number of taxes in the shop. Returns the same structure as one item of `get_taxes()`, or an empty
+        dict if the tax does not exist.
+        """
+        tax_list = self._client.model('tax').search_read(
+            filters={'id': f'[{tax_id}]', 'deleted': IS_FALSE},
+            fields=['id', 'name', 'rate'],
+        )
+
+        if not tax_list:
+            return dict()
+
+        tax = tax_list[0]
+
+        tax_rules = self._client.model('tax_rule').search_read(
+            filters={'id_tax': f'[{tax_id}]'},
+            fields=['id_tax_rules_group', 'id_tax'],
+        )
+        tax['tax_groups'] = self._get_tax_groups_by_rules(tax_rules)
+
+        return tax
+
+    def _get_tax_groups_by_rules(self, tax_rules):
+        group_ids = sorted({x['id_tax_rules_group'] for x in tax_rules})
+
+        if not group_ids:
+            return []
+
+        tax_groups = self._client.model('tax_rule_group').search_read(
+            filters={'id': '[%s]' % '|'.join(str(x) for x in group_ids), 'deleted': IS_FALSE},
+            fields=['id', 'name'],
+        )
+
+        return [{'id': x['id'], 'name': x['name']} for x in tax_groups]
 
     def get_taxes(self):
         """Will return the following list:

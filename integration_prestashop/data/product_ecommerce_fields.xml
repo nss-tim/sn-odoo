@@ -209,9 +209,15 @@ value = {
 }
 
 if FIRST_TIME_IMPORT:
+    template_data, _ = external_data
+
+    # Virtual products are not physical, so they become services without stock
+    is_service = template_data['type']['value'] == 'virtual'
+
     value.update(
         active=True,
-        is_storable=True,
+        type='service' if is_service else 'consu',
+        is_storable=not is_service,
     )
             </field>
             <field name="export_script">

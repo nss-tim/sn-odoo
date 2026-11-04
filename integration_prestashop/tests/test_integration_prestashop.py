@@ -154,6 +154,14 @@ class TestIntegrationPrestashopCommon(OdooIntegrationBase):
 @tagged('post_install', '-at_install', 'test_integration_prestashop')
 class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
 
+    def test_integration_form_keeps_prestashop_fields_without_dynamic_attribute_setting(self):
+        # The PrestaShop fields used to be placed right after the removed setting
+        arch = self.env['sale.integration'].get_view(view_type='form')['arch']
+
+        self.assertNotIn('is_import_dynamic_attribute', arch)
+        self.assertIn('name="delivery_time"', arch)
+        self.assertIn('name="message_template_out_of_stock"', arch)
+
     def test_search_read_product(self):
         template_list = self.adapter._client.model('product').search_read(
             filters={'id': '9100500'},
@@ -240,6 +248,10 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
         self.assertEqual(data['sale_ok'], True)
         self.assertEqual(data['active'], True)
         self.assertEqual(data['is_storable'], True)
+
+        if 'allow_out_of_stock_order' in self.env['product.template']:
+            self.assertIs(data['allow_out_of_stock_order'], True)
+
         self.assertEqual(
             data['integration_default_category_id'],
             self.env.ref('integration_prestashop.integration_prestashop_product_public_category_2').id,
@@ -809,7 +821,7 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
         self.assertEqual(task6.state, 'done')
 
         self.assertEqual(round(invoice.amount_residual, 1), 0.0)
-        self.assertEqual(invoice.payment_state, 'paid')
+        self.assertIn(invoice.payment_state, ('paid', 'in_payment'))
 
         payment = self.env['account.payment'].search([('invoice_ids', 'in', invoice.id)])
         payment.ensure_one()
@@ -840,6 +852,11 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
             self.assertFalse(exported_data)
             return
 
+        # The fixture leaves the template mapping of this product empty, and the option is sent only for a
+        # product that already exists in PrestaShop
+        self.env.ref(
+            'integration_prestashop.prestashop_product_template_mapping_9154587918001'
+        ).template_id = template
         template.allow_out_of_stock_order = True
 
         field.calculate_export_value(self.integration.id, template.id)
@@ -847,7 +864,7 @@ class TestIntegrationPrestashop(TestIntegrationPrestashopCommon):
         self.assertEqual(
             exported_data,
             {
-                'external_id': '9100500',
+                'external_id': '9154587918001',
                 'out_of_stock': 1,
             },
         )

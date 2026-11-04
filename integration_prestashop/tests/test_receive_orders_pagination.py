@@ -2,9 +2,12 @@
 
 from datetime import datetime
 
+from odoo.tests import tagged
+
 from .test_integration_prestashop import TestIntegrationPrestashopCommon
 
 
+@tagged('post_install', '-at_install')
 class TestPrestashopReceiveOrdersPagination(TestIntegrationPrestashopCommon):
     """PrestaShop id-keyset pagination: full page -> id of the last order, partial -> None,
     and a page_token continues the import run via a `filter[id] > token` option (immune to

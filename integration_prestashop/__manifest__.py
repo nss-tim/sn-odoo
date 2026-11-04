@@ -17,7 +17,7 @@ Multi-Channel Sales Management, Seamless E-commerce Integration, Odoo for Presta
 Multi-Store Management, E-commerce Integration, Odoo E-commerce Solution,
 Connect PrestaShop to Odoo, PrestaShop Odoo Bridge, Odoo PrestaShop Bridge''',
     'category': 'Sales',
-    'version': '19.0.2.3.1',
+    'version': '19.0.2.4.0',
     'images': [
         'static/description/images/banner.gif',
     ],

@@ -827,6 +827,9 @@ STORAGE_STR = """
     },
     "order_cart_rule": {
         "100501": []
+    },
+    "stock_available": {
+        "9100500": [{"out_of_stock": "1"}]
     }
 }
 """

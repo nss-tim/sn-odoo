@@ -18,7 +18,8 @@ _logger = logging.getLogger(__name__)
 class PrestashopWebhook(Controller, IntegrationWebhook):
 
     _kwargs = {
-        'type': 'jsonrpc',
+        # Not `jsonrpc`: it answers every outcome, errors included, with 200, hiding failures from the store.
+        'type': 'http',
         'auth': 'none',
         'methods': ['POST'],
         'csrf': False,
@@ -123,8 +124,9 @@ class PrestashopWebhook(Controller, IntegrationWebhook):
         # Validate shop ID
         webhook_shop_id = str(post_data.get('id_shop', ''))
         if not webhook_shop_id:
-            _logger.warning('No shop ID found in webhook data')
-            return False
+            message = 'Webhook skipped: no shop ID found in webhook data'
+            _logger.warning(message)
+            return Response(message)
 
         if not integration._validate_shop_id(webhook_shop_id):
             _logger.warning('Webhook skipped: shop ID validation failed')
@@ -173,12 +175,33 @@ class PrestashopWebhook(Controller, IntegrationWebhook):
 
         # If the product is simple (not a combination), reference is required
         reference = self._get_value_from_post_data('reference')
-        product_type = self._get_value_from_post_data('product_type')
+        product_type = self._get_product_type()
         if not reference and product_type in ['', 'virtual']:
             _logger.warning(f'Webhook skipped: reference is empty for product {external_product_id}.')
             return Response(f'Webhook skipped: reference is empty for product {external_product_id}.')
 
         return self._process_event(integration, external_product_id)
+
+    def _get_product_type(self):
+        """
+        Return the PrestaShop product type of the webhook product.
+
+        PrestaShop added `product_type` in 1.7.8; earlier versions send only the legacy flags, so the type
+        is derived from them. A simple product maps to '', the value the reference check expects for it.
+        """
+        post_data = self._get_post_data()
+
+        if 'product_type' in post_data:
+            return post_data['product_type']
+
+        if str(post_data.get('is_virtual')) == '1':
+            return 'virtual'
+        if str(post_data.get('cache_is_pack')) == '1':
+            return 'pack'
+        if str(post_data.get('cache_default_attribute', '0')) not in ('', '0'):
+            return 'combinations'
+
+        return ''
 
     def _get_product_name(self, integration):
         integration_lang = integration.integration_lang_id
